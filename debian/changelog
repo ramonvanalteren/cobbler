@@ -7,7 +7,7 @@ cobbler (2.1.0~git20101130-0ubuntu1~ppa2) unreleased; urgency=low
     - update maintainer
     - add misc depends (lintian)
     - section misc
-    - use genisoimage instead of mkisofs
+    - use genisoimage instead of mkisofs (lintian)
   * debian/init.d.ex, debian/watch.ex: remove example files (lintian)
   * debian/pycompat: add pycompat (lintian)
   * debian/rules:
@@ -23,8 +23,9 @@ cobbler (2.1.0~git20101130-0ubuntu1~ppa2) unreleased; urgency=low
     debian/patches/series: update name section of manpages for better
     indexing by whatis/apropos (lintian)
   * debian/README.Debian: dropped (lintian)
+  * debian/README.source: added (lintian)
 
- -- Dustin Kirkland <kirkland@ubuntu.com>  Tue, 30 Nov 2010 15:05:38 -0600
+ -- Dustin Kirkland <kirkland@ubuntu.com>  Tue, 30 Nov 2010 15:07:13 -0600
 
 cobbler (1.5.0-1) unstable; urgency=low
 
