@@ -3,7 +3,7 @@ Section: misc
 Priority: optional
 Maintainer: Dustin Kirkland <kirkland@ubuntu.com>
 XSBC-Original-Maintainer: Jasper Poppe <jpoppe@ebay.com>
-Build-Depends: debhelper (>= 7), python-cheetah, python-yaml, git-core, python
+Build-Depends: debhelper (>= 7), python-cheetah, python-yaml, git-core, python, quilt, cdbs
 Standards-Version: 3.8.0
 Homepage: https://fedoraproject.org/cobbler
 
