@@ -21,8 +21,9 @@ cobbler (2.1.0~git20101130-0ubuntu1~ppa2) unreleased; urgency=low
   * debian/patches/03_manpage-whatis-entries.patch,
     debian/patches/series: update name section of manpages for better
     indexing by whatis/apropos (lintian)
+  * debian/README.Debian: dropped (lintian)
 
- -- Dustin Kirkland <kirkland@ubuntu.com>  Tue, 30 Nov 2010 15:00:00 -0600
+ -- Dustin Kirkland <kirkland@ubuntu.com>  Tue, 30 Nov 2010 15:01:39 -0600
 
 cobbler (1.5.0-1) unstable; urgency=low
 
