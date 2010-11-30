@@ -24,8 +24,11 @@ cobbler (2.1.0~git20101130-0ubuntu1~ppa2) unreleased; urgency=low
     indexing by whatis/apropos (lintian)
   * debian/README.Debian: dropped (lintian)
   * debian/README.source: added (lintian)
+  * debian/cobbler.default, debian/init.d.lsb, debian/upstart,
+    debian/patches/04_drop-init-script.patch, debian/patches/series:
+    - migrate from an init script to an upstart job
 
- -- Dustin Kirkland <kirkland@ubuntu.com>  Tue, 30 Nov 2010 15:07:13 -0600
+ -- Dustin Kirkland <kirkland@ubuntu.com>  Tue, 30 Nov 2010 15:24:55 -0600
 
 cobbler (1.5.0-1) unstable; urgency=low
 

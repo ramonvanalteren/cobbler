@@ -1,0 +1,12 @@
+=== modified file 'setup.py'
+--- a/setup.py	2010-07-12 20:39:03 +0000
++++ b/setup.py	2010-11-30 21:23:03 +0000
+@@ -167,7 +167,6 @@
+             ("/usr/sbin", ["scripts/tftpd.py"]),
+ 
+             ("%s" % webconfig,              ["config/cobbler_web.conf"]),
+-            ("%s" % initpath,               ["config/cobblerd"]),
+             ("%s" % docpath,                ["docs/*.gz"]),
+             ("installer_templates",         ["installer_templates/*"]),
+             ("%skickstarts" % libpath,      ["kickstarts/*"]),
+

@@ -1,0 +1,14 @@
+# cobbler - provisioning service
+#
+# Cobbler is a provisioning service
+
+description	"Cobbler"
+author "Dustin Kirkland <kirkland@canonical.com>"
+
+start on started networking
+
+respawn
+respawn limit 10 5
+
+# To add options to your daemon, edit the line below:
+exec /usr/bin/cobblerd
