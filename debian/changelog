@@ -9,13 +9,15 @@ cobbler (2.1.0~git20101130-0ubuntu1~ppa2) unreleased; urgency=low
     - section misc
   * debian/init.d.ex, debian/watch.ex: remove example files (lintian)
   * debian/pycompat: add pycompat (lintian)
-  * debian/rules: use dh_prep (lintian)
+  * debian/rules:
+    - use dh_prep (lintian)
+    - use dh_python2 to get libs in the right place (lintian)
   *  debian/control, debian/rules: added quilt patch system
   * === added directory debian/patches, debian/patches/01_webroot.patch,
     debian/patches/series: move the webroot out of /var/www (lintian)
   * debian/links: link the web dirs into /var/www (for now)
 
- -- Dustin Kirkland <kirkland@ubuntu.com>  Tue, 30 Nov 2010 14:31:22 -0600
+ -- Dustin Kirkland <kirkland@ubuntu.com>  Tue, 30 Nov 2010 14:33:50 -0600
 
 cobbler (1.5.0-1) unstable; urgency=low
 
