@@ -27,8 +27,9 @@ cobbler (2.1.0~git20101130-0ubuntu1~ppa2) unreleased; urgency=low
   * debian/cobbler.default, debian/init.d.lsb, debian/upstart,
     debian/patches/04_drop-init-script.patch, debian/patches/series:
     - migrate from an init script to an upstart job
+  * debian/pyversions: added
 
- -- Dustin Kirkland <kirkland@ubuntu.com>  Tue, 30 Nov 2010 15:24:55 -0600
+ -- Dustin Kirkland <kirkland@ubuntu.com>  Tue, 30 Nov 2010 15:29:05 -0600
 
 cobbler (1.5.0-1) unstable; urgency=low
 
