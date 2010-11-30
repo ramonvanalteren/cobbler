@@ -1,10 +1,13 @@
-cobbler (2.1.0~git20101130-0ubuntu1~ppa1) natty; urgency=low
+cobbler (2.1.0~git20101130-0ubuntu1~ppa2) unreleased; urgency=low
 
   * Update packaging for Ubuntu
   * Use snapshot from git, as 2.0.4 tarball does not include Makefile,
     hence doesn't build
+  * debian/control:
+    - update maintainer
+    - add misc depends (lintian)
 
- -- Dustin Kirkland <kirkland@ubuntu.com>  Tue, 30 Nov 2010 13:04:54 -0600
+ -- Dustin Kirkland <kirkland@ubuntu.com>  Tue, 30 Nov 2010 13:23:15 -0600
 
 cobbler (1.5.0-1) unstable; urgency=low
 
