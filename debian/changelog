@@ -6,9 +6,11 @@ cobbler (2.1.0~git20101130-0ubuntu1~ppa2) unreleased; urgency=low
   * debian/control:
     - update maintainer
     - add misc depends (lintian)
+    - section misc
   * debian/init.d.ex, debian/watch.ex: remove example files (lintian)
+  * debian/pycompat: add pycompat (lintian)
 
- -- Dustin Kirkland <kirkland@ubuntu.com>  Tue, 30 Nov 2010 13:24:31 -0600
+ -- Dustin Kirkland <kirkland@ubuntu.com>  Tue, 30 Nov 2010 13:26:10 -0600
 
 cobbler (1.5.0-1) unstable; urgency=low
 
