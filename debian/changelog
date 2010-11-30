@@ -16,8 +16,10 @@ cobbler (2.1.0~git20101130-0ubuntu1~ppa2) unreleased; urgency=low
   * === added directory debian/patches, debian/patches/01_webroot.patch,
     debian/patches/series: move the webroot out of /var/www (lintian)
   * debian/links: link the web dirs into /var/www (for now)
+  * debian/patches/02_install-layout.patch, debian/patches/series:
+    fix install layout, getting things out of /usr/local
 
- -- Dustin Kirkland <kirkland@ubuntu.com>  Tue, 30 Nov 2010 14:33:50 -0600
+ -- Dustin Kirkland <kirkland@ubuntu.com>  Tue, 30 Nov 2010 14:45:16 -0600
 
 cobbler (1.5.0-1) unstable; urgency=low
 
