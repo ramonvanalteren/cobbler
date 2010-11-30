@@ -1,0 +1,13 @@
+=== modified file 'setup.py'
+--- a/setup.py	2010-07-12 20:39:03 +0000
++++ b/setup.py	2010-11-30 19:46:00 +0000
+@@ -128,7 +128,7 @@
+     libpath     = "/var/lib/cobbler/"
+     logpath     = "/var/log/"
+ 
+-    webroot     = "/var/www/"
++    webroot     = "/usr/share/cobbler/webroot/"
+     webconfig   = "/etc/httpd/conf.d/"
+     webcontent  = webroot + "cobbler_webui_content/"
+ 
+
