@@ -1,5 +1,6 @@
-cobbler (2.1.0~git20101130-0ubuntu1~ppa2) unreleased; urgency=low
+cobbler (2.1.0~git20101130-0ubuntu2~ppa0) unreleased; urgency=low
 
+  [ Dustin Kirkland ]
   * Update packaging for Ubuntu
   * Use snapshot from git, as 2.0.4 tarball does not include Makefile,
     hence doesn't build
@@ -29,17 +30,27 @@ cobbler (2.1.0~git20101130-0ubuntu1~ppa2) unreleased; urgency=low
     - migrate from an init script to an upstart job
   * debian/pyversions: added
 
- -- Dustin Kirkland <kirkland@ubuntu.com>  Tue, 30 Nov 2010 15:29:05 -0600
+  [ Clint Byrum ]
+  * debian/pyversions: removed, not needed and breaks natty
+  * debian/patches/10_detect_ubuntu.patch: fix os detection
+  * debian/patches/02_install-layout.patch: adding webconfig
+  * Adding debconf question cobbler/enable_web and note about
+    configuration.
+  * switching to deb src 3.0 (quilt) format.
+  * adding missing python depends
+  * recommending hardlink
+
+ -- Clint Byrum <clint@ubuntu.com>  Thu, 09 Dec 2010 17:10:49 -0800
 
 cobbler (1.5.0-1) unstable; urgency=low
 
   * Release bump
 
  -- Jasper Capel <jasper@newnewyork.nl>  Tue, 24 Feb 2009 19:25:21 +0100
+
 cobbler (1.4.1-1) unstable; urgency=low
 
   * Initial release
 
  -- Jasper Capel <jasper@newnewyork.nl>  Wed, 11 Feb 2009 22:50:37 +0100
-
 

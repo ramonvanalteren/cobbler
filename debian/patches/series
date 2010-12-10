@@ -1,4 +1,6 @@
+10_detect_ubuntu.patch
 01_webroot.patch
 02_install-layout.patch
 03_manpage-whatis-entries.patch
 04_drop-init-script.patch
+20_ubuntu_web_layout.patch

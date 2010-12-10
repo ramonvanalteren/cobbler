@@ -1,6 +1,8 @@
 === modified file 'Makefile'
---- a/Makefile	2010-06-17 14:38:33 +0000
-+++ b/Makefile	2010-11-30 20:43:25 +0000
+Index: cobbler/Makefile
+===================================================================
+--- cobbler.orig/Makefile	2010-12-09 15:03:04.891694001 -0800
++++ cobbler/Makefile	2010-12-09 15:03:07.331694001 -0800
 @@ -40,7 +40,7 @@
  	chown -R apache /usr/share/cobbler/web
  
@@ -10,4 +12,24 @@
  
  devinstall:
  	-rm -rf /usr/share/cobbler
-
+Index: cobbler/setup.py
+===================================================================
+--- cobbler.orig/setup.py	2010-12-09 15:03:04.901694001 -0800
++++ cobbler/setup.py	2010-12-09 15:06:52.591694001 -0800
+@@ -129,7 +129,7 @@
+     logpath     = "/var/log/"
+ 
+     webroot     = "/usr/share/cobbler/webroot/"
+-    webconfig   = "/etc/httpd/conf.d/"
++    webconfig   = "/etc/apache2/sites-available/"
+     webcontent  = webroot + "cobbler_webui_content/"
+ 
+ 
+@@ -167,6 +167,7 @@
+             ("/usr/sbin", ["scripts/tftpd.py"]),
+ 
+             ("%s" % webconfig,              ["config/cobbler_web.conf"]),
++            ("%s" % webconfig,              ["config/cobbler.conf"]),
+             ("%s" % initpath,               ["config/cobblerd"]),
+             ("%s" % docpath,                ["docs/*.gz"]),
+             ("installer_templates",         ["installer_templates/*"]),
