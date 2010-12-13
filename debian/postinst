@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -e
 
 if [ "$1" = "configure" ] ; then
   . /usr/share/debconf/confmodule

@@ -35,7 +35,7 @@ cobbler (2.1.0~git20101130-0ubuntu1~ppa2) unreleased; urgency=low
   + debian/links: link the web dirs into /var/www (for now)
   + debian/pyversions: added
   + debian/postinst, debian/prerm: fix debhelper token syntax
-  + debian/postinst: fix bashism
+  + debian/postinst: fix bashism, set -e
 
   [Chuck Short]
   + debian/changelog: Clean up changelog so its easier to read.
