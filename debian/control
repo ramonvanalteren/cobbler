@@ -8,7 +8,9 @@ Build-Depends: debhelper (>= 7.0.50),
  python-yaml, 
  git-core, 
  python-support,
- quilt, cdbs
+ python-setuptools
+ quilt, 
+ cdbs
 Standards-Version: 3.8.0
 Homepage: https://fedoraproject.org/cobbler
 
