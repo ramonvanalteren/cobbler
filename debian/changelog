@@ -33,6 +33,7 @@ cobbler (2.1.0~git20101130-0ubuntu1~ppa2) unreleased; urgency=low
       of manpages for better indexing by whatis/apropos
   + debian/links: link the web dirs into /var/www (for now)
   + debian/pyversions: added
+  + debian/postinst, debian/prerm: fix debhelper token syntax
 
   [Chuck Short]
   + debian/changelog: Clean up changelog so its easier to read.
@@ -57,7 +58,6 @@ cobbler (2.1.0~git20101130-0ubuntu1~ppa2) unreleased; urgency=low
   + switching to deb src 3.0 (quilt) format.
   + adding missing python depends
   + recommending hardlink
-
 
  -- Dustin Kirkland <kirkland@ubuntu.com>  Tue, 30 Nov 2010 15:29:05 -0600
 
