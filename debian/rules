@@ -41,7 +41,7 @@ install: build
 	# Add here commands to install the package into debian/cobbler.
 	$(MAKE) debinstall DESTDIR=$(CURDIR)/debian/cobbler 
 	# rename some files to fit apache2 conventions
-#	cd $(CURDIR)/debian/cobbler/etc/apache2/sites-available && mv cobbler_web.conf cobbler_web && mv cobbler.conf cobbler
+	cd $(CURDIR)/debian/cobbler/etc/apache2/sites-available && mv cobbler_web.conf cobbler_web && mv cobbler.conf cobbler
 
 
 # Build architecture-independent files here.

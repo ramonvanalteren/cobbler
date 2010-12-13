@@ -1,4 +1,4 @@
-cobbler (2.1.0~git20101130-0ubuntu1~ppa3) natty; urgency=low
+cobbler (2.1.0~git20101130-0ubuntu1~ppa4) natty; urgency=low
 
   [Dustin Kirkland]
   + Update packaging for Ubuntu
@@ -25,6 +25,7 @@ cobbler (2.1.0~git20101130-0ubuntu1~ppa3) natty; urgency=low
     * use dh_prep (lintian)
     * use dh_python2 to get libs in the right place (lintian)
     * Add quilt.
+    * uncomment the apache config file fix, needed to ensite configs
   + debian/pyversions: added
   + Added patches:
     * debian/patches/01_webroot.patch: move the webroot out of /var/www
