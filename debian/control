@@ -25,4 +25,3 @@ Description: Install server
  distributions from DVDs and rsync mirrors, kickstart templating, integrated yum
  mirroring, and built-in DHCP/DNS Management. Cobbler has a Python and XMLRPC API 
  for integration with other applications. There is also a web interface.
-
