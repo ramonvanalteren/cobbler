@@ -13,6 +13,7 @@ cobbler (2.1.0~git20101130-0ubuntu1~ppa2) unreleased; urgency=low
     - use genisoimage instead of mkisofs (lintian)
     - Added quilt
     - reformat dependencies, one per line, alphabetical
+    - update standards version
   + Add uppstart support:
     * Removed debian/init.d.ex debian/watch.ex example files.
     * debian/cobbler.default, debian/init.d.lsb, debian/upstart,

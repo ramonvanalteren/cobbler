@@ -9,7 +9,7 @@ Build-Depends: debhelper (>= 7.0.50),
  git-core, 
  python-support,
  python-setuptools
-Standards-Version: 3.8.0
+Standards-Version: 3.9.1
 Homepage: https://fedoraproject.org/cobbler
 
 Package: cobbler
