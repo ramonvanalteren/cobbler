@@ -48,6 +48,9 @@ cobbler (2.1.0~git20101130-0ubuntu1~ppa2) unreleased; urgency=low
       + Add build dependency python-nose.
   + Split out the cobbler package into cobbler and cobbler-common:
     * debian/rules: Update debian/rules with newer debhelper.
+    * debian/control:
+      + Add cobbler-common package, contains the files that 
+        cobbler packages depend on.
   + Added debian/watch file.
 
   [ Clint Byrum ]
