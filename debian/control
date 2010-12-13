@@ -9,15 +9,14 @@ Build-Depends: debhelper (>= 7.0.50),
  git-core, 
  python-support,
  python-setuptools
- quilt, 
- cdbs
 Standards-Version: 3.8.0
 Homepage: https://fedoraproject.org/cobbler
 
 Package: cobbler
 Architecture: all
 Depends: ${misc:Depends}, ${python:Depends}, python, apache2, libapache2-mod-python, python-yaml, python-netaddr
- python-cheetah, python-simplejson, python-urlgrabber, syslinux | syslinux-common
+ python-cheetah, python-simplejson, python-urlgrabber, syslinux | syslinux-common, lsb-release, python-django, libapache2-mod-wsgi
+Recommends: hardlink
 Suggests: rsync, tftpd-hpa, genisoimage, dhcp3-server, createrepo
 Description: Install server
  Cobbler is a network install server. Cobbler supports PXE, virtualized installs, and

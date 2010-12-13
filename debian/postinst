@@ -1,0 +1,17 @@
+#!/bin/sh
+
+if [ "$1" == "configure" ] ; then
+  . /usr/share/debconf/confmodule
+
+  db_get cobbler/enable_web
+  if [ "$RET" = "true" ]; then
+    a2enmod proxy
+    a2enmod proxy_http
+    a2ensite cobbler
+    a2ensite cobbler_web
+
+    invoke-rc.d apache2 restart
+  fi
+fi
+
+# DEBHELPER #

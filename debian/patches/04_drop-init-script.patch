@@ -1,12 +1,13 @@
 === modified file 'setup.py'
---- a/setup.py	2010-07-12 20:39:03 +0000
-+++ b/setup.py	2010-11-30 21:23:03 +0000
-@@ -167,7 +167,6 @@
-             ("/usr/sbin", ["scripts/tftpd.py"]),
+Index: cobbler/setup.py
+===================================================================
+--- cobbler.orig/setup.py	2010-12-09 16:09:59.000000000 -0800
++++ cobbler/setup.py	2010-12-09 16:15:41.631694002 -0800
+@@ -168,7 +168,6 @@
  
              ("%s" % webconfig,              ["config/cobbler_web.conf"]),
+             ("%s" % webconfig,              ["config/cobbler.conf"]),
 -            ("%s" % initpath,               ["config/cobblerd"]),
              ("%s" % docpath,                ["docs/*.gz"]),
              ("installer_templates",         ["installer_templates/*"]),
              ("%skickstarts" % libpath,      ["kickstarts/*"]),
-
