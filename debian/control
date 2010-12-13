@@ -14,8 +14,19 @@ Homepage: https://fedoraproject.org/cobbler
 
 Package: cobbler
 Architecture: all
-Depends: ${misc:Depends}, ${python:Depends}, python, apache2, libapache2-mod-python, python-yaml, python-netaddr
- python-cheetah, python-simplejson, python-urlgrabber, syslinux | syslinux-common, lsb-release, python-django, libapache2-mod-wsgi
+Depends: ${misc:Depends}, ${python:Depends},
+ apache2,
+ libapache2-mod-python,
+ libapache2-mod-wsgi,
+ lsb-release,
+ python,
+ python-cheetah,
+ python-django,
+ python-netaddr,
+ python-simplejson,
+ python-urlgrabber,
+ python-yaml,
+ syslinux | syslinux-common
 Recommends: hardlink
 Suggests: rsync, tftpd-hpa, genisoimage, dhcp3-server, createrepo
 Description: Install server
