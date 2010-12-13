@@ -43,6 +43,7 @@ cobbler (2.1.0~git20101130-0ubuntu1~ppa2) unreleased; urgency=low
       + python becomes python-support.
       + update debhelper version.
       + python-setuptools is required for build.
+      + python-netaddr is needed for the testsuite.
       + Dropped python-support as a run time dependency.
       + Added dependency of python-urlgrabber and python-simplejson.
       + Add build dependency python-nose.

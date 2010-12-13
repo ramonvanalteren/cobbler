@@ -9,6 +9,7 @@ Build-Depends: debhelper (>= 7.0.50),
  git-core, 
  python-support,
  python-setuptools,
+ python-netaddr,
  python-nose
 Standards-Version: 3.8.0
 Homepage: https://fedoraproject.org/cobbler
