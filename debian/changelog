@@ -45,6 +45,7 @@ cobbler (2.1.0~git20101130-0ubuntu1~ppa2) unreleased; urgency=low
       + python-setuptools is required for build.
       + Dropped python-support as a run time dependency.
       + Added dependency of python-urlgrabber and python-simplejson.
+      + Add build dependency python-nose.
   + Split out the cobbler package into cobbler and cobbler-common:
     * debian/rules: Update debian/rules with newer debhelper.
   + Added debian/watch file.
