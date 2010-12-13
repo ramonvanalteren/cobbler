@@ -7,3 +7,12 @@ DEB_PYTHON_SYSTEM=pysupport
 
 %:
 	dh $@ --with quilt
+
+override_dh_auto_build:
+	$(MAKE)
+
+override_dh_auto_test:
+	nosetests cobbler/*.py || true
+
+override_dh_auto_install:
+	$(MAKE) debinstall DESTDIR=$(CURDIR)/debian/cobbler
