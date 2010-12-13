@@ -56,7 +56,6 @@ cobbler (2.1.0~git20101130-0ubuntu1~ppa2) unreleased; urgency=low
   + adding missing python depends
   + recommending hardlink
 
-
  -- Dustin Kirkland <kirkland@ubuntu.com>  Tue, 30 Nov 2010 15:29:05 -0600
 
 cobbler (1.5.0-1) unstable; urgency=low
