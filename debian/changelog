@@ -36,6 +36,7 @@ cobbler (2.1.0~git20101130-0ubuntu1~ppa2) unreleased; urgency=low
   + debian/changelog: Clean up changelog so its easier to read.
   + debian/control:
     * Dropped duplicate tftpd-hpa.
+    * Update maintainer according to spec.
 
  -- Dustin Kirkland <kirkland@ubuntu.com>  Tue, 30 Nov 2010 15:29:05 -0600
 

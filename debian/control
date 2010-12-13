@@ -1,7 +1,7 @@
 Source: cobbler
 Section: misc
 Priority: optional
-Maintainer: Dustin Kirkland <kirkland@ubuntu.com>
+Maintainer: Ubuntu MOTU Developers <ubuntu-motu@lists.ubuntu.com>
 XSBC-Original-Maintainer: Jasper Poppe <jpoppe@ebay.com>
 Build-Depends: debhelper (>= 7), python-cheetah, python-yaml, git-core, python, quilt, cdbs
 Standards-Version: 3.8.0
