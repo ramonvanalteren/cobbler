@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ "$1" == "configure" ] ; then
+if [ "$1" = "configure" ] ; then
   . /usr/share/debconf/confmodule
 
   db_get cobbler/enable_web
