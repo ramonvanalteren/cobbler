@@ -16,8 +16,7 @@ Homepage: https://fedoraproject.org/cobbler
 
 Package: cobbler
 Architecture: all
-Depends: cobbler-common (= ${binary:Version}), ${misc:Depends}, ${python:Depends}, python, apache2, libapache2-mod-python, python-yaml, python-netaddr, python-cheetah, python-simplejson, python-urlgrabber, syslinux | syslinux-common, 
- lsb-release, python-django, libapache2-mod-wsgi
+Depends: cobbler-common (= ${binary:Version}), ${misc:Depends}, ${python:Depends}, python, apache2, libapache2-mod-python, syslinux | syslinux-common, lsb-release, libapache2-mod-wsgi, 
 Recommends: hardlink
 Suggests: rsync, tftpd-hpa, genisoimage, dhcp3-server, createrepo
 Description: Install server
@@ -28,9 +27,24 @@ Description: Install server
  mirroring, and built-in DHCP/DNS Management. Cobbler has a Python and XMLRPC API 
  for integration with other applications. There is also a web interface.
 
+Package: python-cobbler
+Architecture: all
+Depends: ${python:Depends}, python-yaml, python-netaddr, python-cheetah, python-simplejson, 
+ python-urlgrabber, python-django, $(misc:Depends}
+Provides: ${python:Provides}
+ Cobbler is a network install server. Cobbler supports PXE, virtualized installs, and
+ reinstalling existing Linux machines. The last two modes use a helper tool, 'koan',
+ that integrates with cobbler. Cobbler's advanced features include importing
+ distributions from DVDs and rsync mirrors, kickstart templating, integrated yum
+ mirroring, and built-in DHCP/DNS Management. Cobbler has a Python and XMLRPC API
+ for integration with other applications. There is also a web interface.
+ .
+ This package contains the python modules.
+
 Package: cobbler-common
 Architecture: all
 Depends: ${misc:Depends}
+Provides: ${python:Provides}
 Description: Cobbler Install server - common files
  Cobbler is a network install server. Cobbler supports PXE, virtualized installs, and
  reinstalling existing Linux machines. The last two modes use a helper tool, 'koan',

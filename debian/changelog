@@ -53,6 +53,7 @@ cobbler (2.1.0~git20101130-0ubuntu1~ppa2) unreleased; urgency=low
       + Add cobbler-common package, contains the files that 
         cobbler packages depend on.
       + Add cobbler daemons to the cobbler package.
+      + Add python-cobbler package.
   + Added debian/watch file.
 
   [ Clint Byrum ]
