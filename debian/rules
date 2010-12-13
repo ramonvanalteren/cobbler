@@ -15,4 +15,4 @@ override_dh_auto_test:
 	nosetests cobbler/*.py || true
 
 override_dh_auto_install:
-	$(MAKE) debinstall DESTDIR=$(CURDIR)/debian/cobbler
+	$(MAKE) debinstall DESTDIR=$(CURDIR)/debian/tmp
