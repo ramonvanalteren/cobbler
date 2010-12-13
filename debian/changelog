@@ -38,6 +38,10 @@ cobbler (2.1.0~git20101130-0ubuntu1~ppa2) unreleased; urgency=low
     * Dropped duplicate tftpd-hpa.
     * Update maintainer according to spec.
     * Fix formatting of description.
+    * Fix formatting of build-depends.
+    * Updated build-depends:
+      + python becomes python-support.
+      + update debhelper version.
   + Added debian/watch file.
 
  -- Dustin Kirkland <kirkland@ubuntu.com>  Tue, 30 Nov 2010 15:29:05 -0600

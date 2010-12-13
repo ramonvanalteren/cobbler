@@ -3,7 +3,12 @@ Section: misc
 Priority: optional
 Maintainer: Ubuntu MOTU Developers <ubuntu-motu@lists.ubuntu.com>
 XSBC-Original-Maintainer: Jasper Poppe <jpoppe@ebay.com>
-Build-Depends: debhelper (>= 7), python-cheetah, python-yaml, git-core, python, quilt, cdbs
+Build-Depends: debhelper (>= 7.0.50),
+ python-cheetah, 
+ python-yaml, 
+ git-core, 
+ python-support,
+ quilt, cdbs
 Standards-Version: 3.8.0
 Homepage: https://fedoraproject.org/cobbler
 
