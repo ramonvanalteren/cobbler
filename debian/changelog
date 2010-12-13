@@ -1,33 +1,39 @@
 cobbler (2.1.0~git20101130-0ubuntu1~ppa2) unreleased; urgency=low
 
-  * Update packaging for Ubuntu
-  * Use snapshot from git, as 2.0.4 tarball does not include Makefile,
+  [Dustin Kirkland]
+  + Update packaging for Ubuntu
+  + Use snapshot from git, as 2.0.4 tarball does not include Makefile,
     hence doesn't build
-  * debian/control:
+  +  Dropped:
+    * debian/README.Debian, debian/README.source: lintian errors.
+  + debian/control:
     - update maintainer
     - add misc depends (lintian)
     - section misc
     - use genisoimage instead of mkisofs (lintian)
-  * debian/init.d.ex, debian/watch.ex: remove example files (lintian)
-  * debian/pycompat: add pycompat (lintian)
-  * debian/rules:
-    - use dh_prep (lintian)
-    - use dh_python2 to get libs in the right place (lintian)
-  *  debian/control, debian/rules: added quilt patch system
-  * === added directory debian/patches, debian/patches/01_webroot.patch,
-    debian/patches/series: move the webroot out of /var/www (lintian)
-  * debian/links: link the web dirs into /var/www (for now)
-  * debian/patches/02_install-layout.patch, debian/patches/series:
-    fix install layout, getting things out of /usr/local (lintian)
-  * debian/patches/03_manpage-whatis-entries.patch,
-    debian/patches/series: update name section of manpages for better
-    indexing by whatis/apropos (lintian)
-  * debian/README.Debian: dropped (lintian)
-  * debian/README.source: added (lintian)
-  * debian/cobbler.default, debian/init.d.lsb, debian/upstart,
-    debian/patches/04_drop-init-script.patch, debian/patches/series:
-    - migrate from an init script to an upstart job
-  * debian/pyversions: added
+    - Added quilt
+  + Add uppstart support:
+    * Removed debian/init.d.ex debian/watch.ex example files.
+    * debian/cobbler.default, debian/init.d.lsb, debian/upstart,
+      debian/patches/04_drop-init-script.patch, debian/patches/series: Migrate
+      init script to usptart.
+  + debian/pycompat: add pycompat (lintian)
+  + debian/rules:
+    * use dh_prep (lintian)
+    * use dh_python2 to get libs in the right place (lintian)
+    * Add quilt.
+  + debian/pyversions: added
+  + Added patches:
+    * debian/patches/01_webroot.patch: move the webroot out of /var/www
+    * debian/patches/02_install-layout.patch: fix install layout, getting
+      things out of /usr/local.
+    * debian/patches/03_manpage-whatis-entries.patch: Update name section
+      of manpages for better indexing by whatis/apropos
+  + debian/links: link the web dirs into /var/www (for now)
+  + debian/pyversions: added
+
+  [Chuck Short]
+  * debian/changelog: Clean up changelog so its easier to read.
 
  -- Dustin Kirkland <kirkland@ubuntu.com>  Tue, 30 Nov 2010 15:29:05 -0600
 
