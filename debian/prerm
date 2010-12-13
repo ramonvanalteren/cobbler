@@ -1,0 +1,21 @@
+#!/bin/sh -e
+
+. /usr/share/debconf/confmodule
+
+case $1 in
+remove)
+    db_get cobbler/enable_web
+    if [ "$RET" = "true" ] ; then
+        a2dissite cobbler || true
+        a2dissite cobbler_web || true
+        # while we enabled them out of convenience in postinst,
+        # we don't want to disable them now and break other things
+        # in the configuration that depend on them
+        invoke-rc.d apache2 restart || true
+    fi
+    ;;
+purge)
+    ;;
+esac
+
+# DEBHELPER #
