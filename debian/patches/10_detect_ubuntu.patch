@@ -2,10 +2,10 @@ Description: Add "ubuntu" as detected distribution.
 Author: Clint Byrum <clint@ubuntu.com>
 Bug: https://fedorahosted.org/cobbler/ticket/617 
 
-Index: cobbler/cobbler/utils.py
+Index: ubuntu/cobbler/utils.py
 ===================================================================
---- cobbler.orig/cobbler/utils.py	2010-12-09 13:12:17.431694001 -0800
-+++ cobbler/cobbler/utils.py	2010-12-09 13:15:55.611694001 -0800
+--- ubuntu.orig/cobbler/utils.py	2010-12-14 11:41:16.375488000 -0800
++++ ubuntu/cobbler/utils.py	2010-12-14 11:50:35.545488001 -0800
 @@ -917,6 +917,14 @@
      Determines what distro we're running under.  
      """
@@ -32,3 +32,19 @@ Index: cobbler/cobbler/utils.py
     elif check_dist() == "suse":
        fd = open("/etc/SuSE-release")
        for line in fd.read().split("\n"):
+Index: ubuntu/cobbler/action_check.py
+===================================================================
+--- ubuntu.orig/cobbler/action_check.py	2010-12-14 11:53:02.005488001 -0800
++++ ubuntu/cobbler/action_check.py	2010-12-14 11:57:36.495488000 -0800
+@@ -125,6 +125,11 @@
+            if rc != 0:
+                status.append(_("service %s is not running%s") % which,notes)
+                return False
++       elif self.checked_dist == "ubuntu":
++           if os.path.exists("/etc/init/%s.conf" % which):
++               rc = utils.subprocess_call(self.logger,"status %s > /dev/null 2>&1" % which, shell=True)
++           if rc != 0:
++               status.append(_("service %s is not running%s") % (which,notes))
+        else:
+            status.append(_("Unknown distribution type, cannot check for running service %s" % which))
+            return False
