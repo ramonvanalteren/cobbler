@@ -12,9 +12,11 @@ cobbler (2.1.0~git20101130-0ubuntu1~ppa4) natty; urgency=low
     - section misc
     - use genisoimage instead of mkisofs (lintian)
     - Added quilt
-    - reformat dependencies, one per line, alphabetical
+    - reformat suggests/dependencies, one per line, alphabetical
     - update standards version
     - fix too-long description
+    - recommend powerwake, which will enable wake-on-lan poweron of managed
+      systems
   + Add upstart support:
     * Removed debian/init.d.ex debian/watch.ex example files.
     * debian/cobbler.default, debian/init.d.lsb, debian/upstart,
@@ -34,6 +36,8 @@ cobbler (2.1.0~git20101130-0ubuntu1~ppa4) natty; urgency=low
       things out of /usr/local.
     * debian/patches/03_manpage-whatis-entries.patch: Update name section
       of manpages for better indexing by whatis/apropos
+    * debian/patches/11_support-other-wol-tools.patch: /sbin/ether-wake
+      does not exist in Ubuntu, but there are numerous other WOL options
   + debian/links: link the web dirs into /var/www (for now)
   + debian/pyversions: added
   + debian/postinst, debian/prerm: fix debhelper token syntax
