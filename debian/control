@@ -29,7 +29,11 @@ Depends: ${misc:Depends}, ${python:Depends},
  syslinux | syslinux-common
 Recommends: hardlink,
  powerwake
-Suggests: rsync, tftpd-hpa, genisoimage, dhcp3-server, createrepo
+Suggests: createrepo,
+ dhcp3-server,
+ genisoimage,
+ rsync,
+ tftpd-hpa
 Description: Install server
  Cobbler is a network install server. Cobbler supports PXE, virtualized
  installs, and reinstalling existing Linux machines. The last two modes
