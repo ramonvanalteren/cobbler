@@ -27,7 +27,8 @@ Depends: ${misc:Depends}, ${python:Depends},
  python-urlgrabber,
  python-yaml,
  syslinux | syslinux-common
-Recommends: hardlink
+Recommends: hardlink,
+ powerwake
 Suggests: rsync, tftpd-hpa, genisoimage, dhcp3-server, createrepo
 Description: Install server
  Cobbler is a network install server. Cobbler supports PXE, virtualized
