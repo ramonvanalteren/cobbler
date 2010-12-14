@@ -5,9 +5,10 @@
 description	"Cobbler"
 author "Dustin Kirkland <kirkland@canonical.com>"
 
-start on started networking
+start on filesystem and net-device-up
+stop on runlevel [016]
 
 respawn
 
 # To add options to your daemon, edit the line below:
-exec /usr/bin/cobblerd
+exec /usr/bin/cobblerd --no-daemonize

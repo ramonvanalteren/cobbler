@@ -66,8 +66,13 @@ cobbler (2.1.0~git20101130-0ubuntu1~ppa4) natty; urgency=low
   + switching to deb src 3.0 (quilt) format.
   + adding missing python depends
   + recommending hardlink
+  + debian/upstart: 
+    * pass --no-daemonize to cobblerd to prevent daemonization
+    * start on filesystem and net-device-up to prevent starting before 
+      networked filesystems.
+    * stop on runlevel [016]: Need to stop it during shutdown
 
- -- Dustin Kirkland <kirkland@ubuntu.com>  Mon, 13 Dec 2010 14:43:24 -0600
+ -- Clint Byrum <clint@ubuntu.com>  Tue, 14 Dec 2010 12:18:06 -0800
 
 cobbler (1.5.0-1) unstable; urgency=low
 
