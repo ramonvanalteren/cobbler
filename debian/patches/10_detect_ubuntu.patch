@@ -1,3 +1,7 @@
+Description: Add "ubuntu" as detected distribution.
+Author: Clint Byrum <clint@ubuntu.com>
+Bug: https://fedorahosted.org/cobbler/ticket/617 
+
 Index: cobbler/cobbler/utils.py
 ===================================================================
 --- cobbler.orig/cobbler/utils.py	2010-12-09 13:12:17.431694001 -0800

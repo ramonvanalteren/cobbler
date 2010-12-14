@@ -1,3 +1,7 @@
+Description: Add synopsis entries to man page to enable whatis command
+Author: Dustin Kirkland <kirkland@ubuntu.com>
+Bug: https://fedorahosted.org/cobbler/ticket/616
+
 === modified file 'docs/cobbler-register.pod'
 --- a/docs/cobbler-register.pod	2009-04-21 22:26:09 +0000
 +++ b/docs/cobbler-register.pod	2010-11-30 20:57:01 +0000
