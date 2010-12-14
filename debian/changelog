@@ -34,6 +34,8 @@ cobbler (2.1.0~git20101130-0ubuntu1~ppa4) natty; urgency=low
       things out of /usr/local.
     * debian/patches/03_manpage-whatis-entries.patch: Update name section
       of manpages for better indexing by whatis/apropos
+    * debian/patches/11_support-other-wol-tools.patch: /sbin/ether-wake
+      does not exist in Ubuntu, but there are numerous other WOL options
   + debian/links: link the web dirs into /var/www (for now)
   + debian/pyversions: added
   + debian/postinst, debian/prerm: fix debhelper token syntax
