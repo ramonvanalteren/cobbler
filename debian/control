@@ -8,7 +8,9 @@ Build-Depends: debhelper (>= 7.0.50),
  python-yaml, 
  git-core, 
  python-support,
- python-setuptools
+ python-setuptools,
+ python-netaddr,
+ python-nose
 Standards-Version: 3.9.1
 Homepage: https://fedoraproject.org/cobbler
 
@@ -20,12 +22,6 @@ Depends: ${misc:Depends}, ${python:Depends},
  libapache2-mod-wsgi,
  lsb-release,
  python,
- python-cheetah,
- python-django,
- python-netaddr,
- python-simplejson,
- python-urlgrabber,
- python-yaml,
  syslinux | syslinux-common
 Recommends: hardlink,
  powerwake
@@ -42,3 +38,31 @@ Description: Install server
  mirrors, kickstart templating, integrated yum mirroring, and built-in
  DHCP/DNS Management. Cobbler has a Python and XMLRPC API for
  integration with other applications. There is also a web interface.
+
+Package: python-cobbler
+Architecture: all
+Depends: ${python:Depends}, python-yaml, python-netaddr, python-cheetah, python-simplejson, 
+ python-urlgrabber, python-django, $(misc:Depends}
+Provides: ${python:Provides}
+ Cobbler is a network install server. Cobbler supports PXE, virtualized installs, and
+ reinstalling existing Linux machines. The last two modes use a helper tool, 'koan',
+ that integrates with cobbler. Cobbler's advanced features include importing
+ distributions from DVDs and rsync mirrors, kickstart templating, integrated yum
+ mirroring, and built-in DHCP/DNS Management. Cobbler has a Python and XMLRPC API
+ for integration with other applications. There is also a web interface.
+ .
+ This package contains the python modules.
+
+Package: cobbler-common
+Architecture: all
+Depends: ${misc:Depends}
+Provides: ${python:Provides}
+Description: Cobbler Install server - common files
+ Cobbler is a network install server. Cobbler supports PXE, virtualized installs, and
+ reinstalling existing Linux machines. The last two modes use a helper tool, 'koan',
+ that integrates with cobbler. Cobbler's advanced features include importing
+ distributions from DVDs and rsync mirrors, kickstart templating, integrated yum
+ mirroring, and built-in DHCP/DNS Management. Cobbler has a Python and XMLRPC API
+ for integration with other applications. There is also a web interface.
+ .
+ This package includes the common files.

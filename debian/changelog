@@ -77,8 +77,77 @@ cobbler (2.1.0~git20101130-0ubuntu1~ppa4) natty; urgency=low
     default of Apache being run as user apache, to the Debian standard of
     www-data.
 
-
  -- Dave Walker (Daviey) <DaveWalker@ubuntu.com>  Wed, 15 Dec 2010 12:04:46 +0000
+
+cobbler (2.1.0~git20101130-0ubuntu1~ppa2) unreleased; urgency=low
+
+  [Dustin Kirkland]
+  + Update packaging for Ubuntu
+  + Use snapshot from git, as 2.0.4 tarball does not include Makefile,
+    hence doesn't build
+  +  Dropped:
+    * debian/README.Debian, debian/README.source: lintian errors.
+  + debian/control:
+    - update maintainer
+    - add misc depends (lintian)
+    - section misc
+    - use genisoimage instead of mkisofs (lintian)
+    - Added quilt
+  + Add uppstart support:
+    * Removed debian/init.d.ex debian/watch.ex example files.
+    * debian/cobbler.default, debian/init.d.lsb, debian/upstart,
+      debian/patches/04_drop-init-script.patch, debian/patches/series: Migrate
+      init script to usptart.
+  + debian/pycompat: add pycompat (lintian)
+  + debian/rules:
+    * use dh_prep (lintian)
+    * use dh_python2 to get libs in the right place (lintian)
+    * Add quilt.
+  + debian/pyversions: added
+  + Added patches:
+    * debian/patches/01_webroot.patch: move the webroot out of /var/www
+    * debian/patches/02_install-layout.patch: fix install layout, getting
+      things out of /usr/local.
+    * debian/patches/03_manpage-whatis-entries.patch: Update name section
+      of manpages for better indexing by whatis/apropos
+  + debian/links: link the web dirs into /var/www (for now)
+  + debian/pyversions: added
+
+  [Chuck Short]
+  + debian/changelog: Clean up changelog so its easier to read.
+  + debian/control:
+    * Dropped duplicate tftpd-hpa.
+    * Update maintainer according to spec.
+    * Fix formatting of description.
+    * Fix formatting of build-depends.
+    * Updated build-depends:
+      + python becomes python-support.
+      + update debhelper version.
+      + python-setuptools is required for build.
+      + python-netaddr is needed for the testsuite.
+      + Dropped python-support as a run time dependency.
+      + Added dependency of python-urlgrabber and python-simplejson.
+      + Add build dependency python-nose.
+  + Split out the cobbler package into cobbler and cobbler-common:
+    * debian/rules: Update debian/rules with newer debhelper.
+    * debian/control:
+      + Add cobbler-common package, contains the files that 
+        cobbler packages depend on.
+      + Add cobbler daemons to the cobbler package.
+      + Add python-cobbler package.
+  + Added debian/watch file.
+  + debian/rules: Add get-orig-source.
+
+  [ Clint Byrum ]
+  + debian/pyversions: removed, not needed and breaks natty
+  + debian/patches/10_detect_ubuntu.patch: fix os detection
+  + debian/patches/02_install-layout.patch: adding webconfig
+  + Adding debconf question cobbler/enable_web and note about configuration.
+  + switching to deb src 3.0 (quilt) format.
+  + adding missing python depends
+  + recommending hardlink
+
+ -- Dustin Kirkland <kirkland@ubuntu.com>  Tue, 30 Nov 2010 15:29:05 -0600
 
 cobbler (1.5.0-1) unstable; urgency=low
 
