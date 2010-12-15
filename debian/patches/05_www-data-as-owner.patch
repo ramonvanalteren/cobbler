@@ -4,8 +4,8 @@ Forwarded: no
 Last-Update: 2010-12-15
 
 === modified file 'Makefile'
---- old/Makefile	2010-06-17 14:38:33 +0000
-+++ new/Makefile	2010-12-13 14:46:21 +0000
+--- a/Makefile
++++ b/Makefile
 @@ -37,7 +37,7 @@
  
  install: build
@@ -14,7 +14,7 @@ Last-Update: 2010-12-15
 +	chown -R www-data /usr/share/cobbler/web
  
  debinstall:
- 	python setup.py install -f --root $(DESTDIR)
+ 	python setup.py install -f --root $(DESTDIR) --install-layout=deb
 @@ -72,7 +72,7 @@
  	cp $(statepath)/dhcp.template /etc/cobbler/dhcp.template
  	cp $(statepath)/rsync.template /etc/cobbler/rsync.template
@@ -24,10 +24,8 @@ Last-Update: 2010-12-15
  	chmod -R +x /var/www/cobbler/web
  	chmod -R +x /var/www/cobbler/svc
  	rm -rf $(statepath)
-
-=== modified file 'build_backup/Makefile'
---- old/build_backup/Makefile	2010-06-16 21:34:44 +0000
-+++ new/build_backup/Makefile	2010-12-13 14:47:36 +0000
+--- a/build_backup/Makefile
++++ b/build_backup/Makefile
 @@ -42,7 +42,7 @@
  
  install: build manpage
@@ -46,10 +44,8 @@ Last-Update: 2010-12-15
  	chmod -R +x /var/www/cobbler/web
  	chmod -R +x /var/www/cobbler/svc
  	rm -rf $(statepath)
-
-=== modified file 'cobbler/action_reposync.py'
---- old/cobbler/action_reposync.py	2010-08-03 20:19:41 +0000
-+++ new/cobbler/action_reposync.py	2010-12-13 14:46:48 +0000
+--- a/cobbler/action_reposync.py
++++ b/cobbler/action_reposync.py
 @@ -563,7 +563,7 @@
          a safeguard.
          """
@@ -59,10 +55,8 @@ Last-Update: 2010-12-15
          utils.subprocess_call(self.logger, cmd1)
  
          cmd2 = "chmod -R 755 %s" % repo_path
-
-=== modified file 'cobbler/cobblerd.py'
---- old/cobbler/cobblerd.py	2009-10-25 15:28:10 +0000
-+++ new/cobbler/cobblerd.py	2010-12-13 14:45:39 +0000
+--- a/cobbler/cobblerd.py
++++ b/cobbler/cobblerd.py
 @@ -61,7 +61,7 @@
      fd.write(binascii.hexlify(data))
      fd.close()
@@ -72,4 +66,3 @@ Last-Update: 2010-12-15
      return 1
  
  def do_xmlrpc_tasks(bootapi, settings, xmlrpc_port):
-
