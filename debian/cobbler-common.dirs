@@ -6,7 +6,7 @@ etc/cobbler/zone_templates
 var/log/cobbler/anamon
 var/log/cobbler/kicklog
 var/log/cobbler/syslog
-var/log/cobber/tasks
+var/log/cobbler/tasks
 usr/share/cobbler
 usr/share/cobbler/installer_templates
 usr/share/man/man1
