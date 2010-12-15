@@ -50,8 +50,8 @@ Depends: ${python:Depends},
  python-urlgrabber, 
  python-django, 
  ${misc:Depends}
-Description: Install server - python libraires.
 Provides: ${python:Provides}
+Description: Install server - python libraires.
  Cobbler is a network install server. Cobbler supports PXE, virtualized installs, and
  reinstalling existing Linux machines. The last two modes use a helper tool, 'koan',
  that integrates with cobbler. Cobbler's advanced features include importing
