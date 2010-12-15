@@ -42,6 +42,7 @@ Description: Install server
  integration with other applications. There is also a web interface.
 
 Package: python-cobbler
+Section: python
 Architecture: all
 Depends: ${python:Depends}, 
  python-yaml, 
