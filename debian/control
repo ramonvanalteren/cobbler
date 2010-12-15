@@ -82,7 +82,7 @@ Description: Cobbler Install server - common files
 Package: koan
 Architecture: all
 Depends: ${python:Depends}, ${misc:Depends}, cobbler
-Description: Koan - kickstart-over-a-network
+Description: kickstart-over-a-network (koan)
  Koan stands for kickstart-over-a-network and allows for both network 
- installation of new virtualized guests and re-installation of an existing system.
- For use with a boot-server configure with Cobbler.
+ installation of new virtualized guests and re-installation of an existing 
+ system.  For use with a boot-server configure with Cobbler.
