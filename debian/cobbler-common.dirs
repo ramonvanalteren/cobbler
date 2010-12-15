@@ -3,7 +3,6 @@ etc/cobbler/power
 etc/cobbler/pxe
 etc/cobbler/reporting
 etc/cobbler/zone_templates
-var/log/nova
 var/log/cobbler/anamon
 var/log/cobbler/kicklog
 var/log/cobbler/syslog
