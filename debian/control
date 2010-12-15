@@ -11,7 +11,7 @@ Build-Depends: debhelper (>= 7.0.50),
  python-setuptools,
  python-netaddr,
  python-nose
-XS-Python-Version: 2.6
+XS-Python-Version: 2.7
 Standards-Version: 3.9.1
 Homepage: https://fedoraproject.org/cobbler
 
