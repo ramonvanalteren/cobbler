@@ -11,7 +11,6 @@ cobbler (2.1.0~git20101130-0ubuntu1~ppa4) natty; urgency=low
     - add misc depends (lintian)
     - section misc
     - use genisoimage instead of mkisofs (lintian)
-    - Added quilt
     - reformat suggests/dependencies, one per line, alphabetical
     - update standards version
     - fix too-long description
@@ -27,7 +26,6 @@ cobbler (2.1.0~git20101130-0ubuntu1~ppa4) natty; urgency=low
   + debian/rules:
     * use dh_prep (lintian)
     * use dh_python2 to get libs in the right place (lintian)
-    * Add quilt.
     * uncomment the apache config file fix, needed to ensite configs
   + debian/pyversions: added
   + Added patches:
