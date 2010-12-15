@@ -23,7 +23,8 @@ Depends: ${misc:Depends}, ${python:Depends},
  libapache2-mod-wsgi,
  lsb-release,
  python,
- syslinux | syslinux-common
+ syslinux | syslinux-common,
+ cobbler-common (= ${binary:Version})
 Recommends: hardlink,
  powerwake
 Suggests: createrepo,
