@@ -16,3 +16,22 @@ override_dh_auto_test:
 
 override_dh_auto_install:
 	$(MAKE) debinstall DESTDIR=$(CURDIR)/debian/tmp
+
+git_url := git://git.fedorahosted.org/cobbler
+tmp_dir := tmp-$(shell echo $$$$)
+
+get-orig-source: cobbler-all
+
+cobbler-all: cobbler-co cobbler-pack
+cobbler-co:
+	rm -rf $(tmp_dir)
+	mkdir $(tmp_dir)
+	# Checkout
+	git clone $(git_url) $(tmp_dir)/src
+
+cobbler-pack: DATE = $(shell date '+%Y%m%d')
+cobbler-pack:
+	mv $(tmp_dir)/src $(tmp_dir)/cobbler-2.1-$(DATE)
+	cd $(tmp_dir) && tar zcvf ../cobbler_2.1-$(DATE).orig.tar.gz --exclude=.git cobbler-2.1-$(DATE)
+	rm -rf $(tmp_dir)
+	@echo "# Done (created cobbler-2.1-$(DATE).orig.tar.gz"
