@@ -5,3 +5,4 @@
 04_drop-init-script.patch
 20_ubuntu_web_layout.patch
 11_support-other-wol-tools.patch
+05_www-data-as-owner.patch
