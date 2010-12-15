@@ -56,6 +56,10 @@ cobbler (2.1.0~git20101130-0ubuntu1~ppa4) natty; urgency=low
       + python-setuptools is required for build.
       + Dropped python-support as a run time dependency.
       + Added dependency of python-urlgrabber and python-simplejson.
+  + Split out cobbler into python-cobbler, cobbler-common for the packaging to make
+    more sense.
+  + debian/control, debian/koan.install, debian/koan.dirs: Split out Koan into its own
+    package.
   + Added debian/watch file.
 
   [ Clint Byrum ]
