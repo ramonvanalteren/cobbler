@@ -3,10 +3,8 @@
 # Verbose mode
 # export DH_VERBOSE=1
 
-DEB_PYTHON_SYSTEM=pysupport
-
 %:
-	dh $@ --with python2 --buildsystem=python_distutils
+	dh $@ --with python2
 
 override_dh_auto_build:
 	$(MAKE)
