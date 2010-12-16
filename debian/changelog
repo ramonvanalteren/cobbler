@@ -90,8 +90,10 @@ cobbler (2.1.0~git20101130-0ubuntu1~ppa4) natty; urgency=low
   + debian/patches/05_www-data-as-owner.patch: Change from Fedora/RH/Centos
     default of Apache being run as user apache, to the Debian standard of
     www-data.
+  + debian/rules: Added to %:, --with python2 --buildsystem=python_distutils
 
- -- Dave Walker (Daviey) <DaveWalker@ubuntu.com>  Wed, 15 Dec 2010 12:04:46 +0000
+
+ -- Dave Walker (Daviey) <DaveWalker@ubuntu.com>  Thu, 16 Dec 2010 20:03:41 +0000
 
 cobbler (2.1.0~git20101130-0ubuntu1~ppa2) unreleased; urgency=low
 
