@@ -32,7 +32,9 @@ Recommends: hardlink,
  cobbler-web
 Suggests: createrepo,
  dhcp3-server,
- genisoimage
+ genisoimage,
+ cman,
+ debmirror
 Description: Install server
  Cobbler is a network install server. Cobbler supports PXE, virtualized
  installs, and reinstalling existing Linux machines. The last two modes
