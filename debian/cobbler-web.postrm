@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ "$1" = "purge" ] ; then
+    # now that configuration is gone, restart apache w/o it
+    invoke-rc.d apache2 restart
+fi
+
+#DEBHELPER#

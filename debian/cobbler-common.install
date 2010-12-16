@@ -48,3 +48,4 @@ etc/cobbler/pxe/s390x_conf.template
 etc/cobbler/pxe/s390x_parm.template
 etc/cobbler/reporting/build_report_email.template
 usr/share/man/man1/cobbler.1.gz
+var/lib/cobbler

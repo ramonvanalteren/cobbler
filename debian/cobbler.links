@@ -1,2 +1,3 @@
 usr/share/cobbler/webroot/cobbler var/www/cobbler
 usr/share/cobbler/webroot/cobbler_webui_content/ var/www/cobbler_webui_content
+etc/cobbler/cobbler.conf etc/apache2/conf.d/cobbler.conf

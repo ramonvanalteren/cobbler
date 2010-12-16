@@ -1,8 +1,8 @@
-Index: cobbler/config/cobbler.conf
+Index: ubuntu/config/cobbler.conf
 ===================================================================
---- cobbler.orig/config/cobbler.conf	2010-12-09 16:49:39.561694002 -0800
-+++ cobbler/config/cobbler.conf	2010-12-09 16:52:49.111694002 -0800
-@@ -1,13 +1,13 @@
+--- ubuntu.orig/config/cobbler.conf	2010-12-14 11:39:23.235488000 -0800
++++ ubuntu/config/cobbler.conf	2010-12-16 13:02:19.711700001 -0800
+@@ -1,18 +1,25 @@
  # This configuration file allows cobbler data
  # to be accessed over HTTP.
  
@@ -21,7 +21,19 @@ Index: cobbler/config/cobbler.conf
      Options Indexes FollowSymLinks
      Order allow,deny
      Allow from all
-@@ -24,7 +24,7 @@
+ </Directory>
+ 
++<IfModule !proxy_module>
++LoadModule proxy_module /usr/lib/apache2/modules/mod_proxy.so
++</IfModule>
++<IfModule !proxy_http_module>
++LoadModule proxy_http_module /usr/lib/apache2/modules/mod_proxy_http.so
++</IfModule>
++
+ ProxyRequests off
+ 
+ ProxyPass /cobbler_api http://localhost:25151/
+@@ -24,7 +31,7 @@
  # and is visited at http://.../cobbler_web not this URL.
  # this is only a pointer to the new page.
  
@@ -30,10 +42,10 @@ Index: cobbler/config/cobbler.conf
      Options Indexes FollowSymLinks
      Order allow,deny
      Allow from all
-Index: cobbler/config/cobbler_web.conf
+Index: ubuntu/config/cobbler_web.conf
 ===================================================================
---- cobbler.orig/config/cobbler_web.conf	2010-12-09 16:53:44.301694002 -0800
-+++ cobbler/config/cobbler_web.conf	2010-12-09 16:54:11.641694002 -0800
+--- ubuntu.orig/config/cobbler_web.conf	2010-12-14 11:39:23.225488000 -0800
++++ ubuntu/config/cobbler_web.conf	2010-12-16 13:01:38.661700001 -0800
 @@ -1,13 +1,6 @@
  # This configuration file enables the cobbler web
  # interface (django version)

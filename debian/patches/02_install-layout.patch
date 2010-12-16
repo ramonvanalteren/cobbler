@@ -1,8 +1,8 @@
 === modified file 'Makefile'
-Index: cobbler/Makefile
+Index: ubuntu/Makefile
 ===================================================================
---- cobbler.orig/Makefile	2010-12-09 15:03:04.891694001 -0800
-+++ cobbler/Makefile	2010-12-09 15:03:07.331694001 -0800
+--- ubuntu.orig/Makefile	2010-12-14 11:39:29.195488000 -0800
++++ ubuntu/Makefile	2010-12-16 12:52:58.901700001 -0800
 @@ -40,7 +40,7 @@
  	chown -R apache /usr/share/cobbler/web
  
@@ -12,24 +12,23 @@ Index: cobbler/Makefile
  
  devinstall:
  	-rm -rf /usr/share/cobbler
-Index: cobbler/setup.py
+Index: ubuntu/setup.py
 ===================================================================
---- cobbler.orig/setup.py	2010-12-09 15:03:04.901694001 -0800
-+++ cobbler/setup.py	2010-12-09 15:06:52.591694001 -0800
-@@ -129,7 +129,7 @@
+--- ubuntu.orig/setup.py	2010-12-16 12:52:58.891700001 -0800
++++ ubuntu/setup.py	2010-12-16 12:54:56.641700000 -0800
+@@ -129,7 +129,6 @@
      logpath     = "/var/log/"
  
      webroot     = "/usr/share/cobbler/webroot/"
 -    webconfig   = "/etc/httpd/conf.d/"
-+    webconfig   = "/etc/apache2/sites-available/"
      webcontent  = webroot + "cobbler_webui_content/"
  
  
-@@ -167,6 +167,7 @@
+@@ -166,7 +165,6 @@
+             # tftpd, hide in /usr/sbin
              ("/usr/sbin", ["scripts/tftpd.py"]),
  
-             ("%s" % webconfig,              ["config/cobbler_web.conf"]),
-+            ("%s" % webconfig,              ["config/cobbler.conf"]),
+-            ("%s" % webconfig,              ["config/cobbler_web.conf"]),
              ("%s" % initpath,               ["config/cobblerd"]),
              ("%s" % docpath,                ["docs/*.gz"]),
              ("installer_templates",         ["installer_templates/*"]),

@@ -20,7 +20,6 @@ Package: cobbler
 Architecture: all
 Depends: ${misc:Depends}, ${python:Depends},
  apache2,
- libapache2-mod-python,
  libapache2-mod-wsgi,
  lsb-release,
  python,
@@ -29,7 +28,8 @@ Depends: ${misc:Depends}, ${python:Depends},
  cobbler-common (= ${binary:Version})
 Recommends: hardlink,
  powerwake,
- tftpd-hpa
+ tftpd-hpa,
+ cobbler-web
 Suggests: createrepo,
  dhcp3-server,
  genisoimage
@@ -63,7 +63,7 @@ Description: Install server - python libraires.
  Management. Cobbler has a Python and XMLRPC API for integration with other
  applications. There is also a web interface.
  .
- This package includes the common files.
+ This package includes the cobbler python modules.
 
 Package: cobbler-common
 Architecture: all
@@ -79,6 +79,24 @@ Description: Cobbler Install server - common files
  applications. There is also a web interface.
  .
  This package includes the common files.
+
+Package: cobbler-web
+Architecture: all
+Depends: python-cobbler (= ${binary:Version}),
+  cobbler-common (= ${binary:Version} ),
+ libapache2-mod-python,
+ ${misc:Depends}
+Provides: ${python:Provides}
+Description: Cobbler Install server - common files
+ Cobbler is a network install server. Cobbler supports PXE, virtualized 
+ installs, and reinstalling existing Linux machines. The last two modes use 
+ a helper tool, 'koan', that integrates with cobbler. Cobbler's advanced 
+ features include importing distributions from DVDs and rsync mirrors, 
+ kickstart templating, integrated yum mirroring, and built-in DHCP/DNS 
+ Management. Cobbler has a Python and XMLRPC API for integration with other 
+ applications. There is also a web interface.
+ .
+ This includes the web interface and its corresponding configuration files.
 
 Package: koan
 Architecture: all
