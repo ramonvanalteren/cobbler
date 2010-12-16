@@ -16,6 +16,8 @@ cobbler (2.1.0~git20101130-0ubuntu1~ppa4) natty; urgency=low
     - fix too-long description
     - recommend powerwake, which will enable wake-on-lan poweron of managed
       systems
+    - recommend tftpd-hpa, needed for pxe
+    - depend rsync, needed for ISO import
   + Add upstart support:
     * Removed debian/init.d.ex debian/watch.ex example files.
     * debian/cobbler.default, debian/init.d.lsb, debian/upstart,
