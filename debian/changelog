@@ -42,6 +42,9 @@ cobbler (2.1.0~git20101130-0ubuntu1~ppa4) natty; urgency=low
   + debian/pyversions: added
   + debian/postinst, debian/prerm: fix debhelper token syntax
   + debian/postinst: fix bashism, set -e
+  + debian/patches/22_reenable_ubuntu_support.patch,
+    debian/patches/29_whitespace.patch, debian/patches/series:
+    fix the whitespace in the original patch
 
   [Chuck Short]
   + debian/changelog: Clean up changelog so its easier to read.

@@ -73,7 +73,7 @@ index 2021419..f4f782d 100644
 -#       pass
 +class UbuntuImporter ( DebianImporter ) :
 +
-+   def __init__(self,logger,rootdir,pkgdir):
++  def __init__(self,logger,rootdir,pkgdir):
 +       DebianImporter.__init__(self,logger,rootdir,pkgdir)
 +       self.breed = "ubuntu"
 +

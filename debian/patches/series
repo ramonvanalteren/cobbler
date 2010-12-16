@@ -12,4 +12,3 @@
 24_update_ubuntu_support.patch
 25_add_more_package_archive.patch
 26_use_base_files_for_ubuntu.patch
-29_whitespace.patch
