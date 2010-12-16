@@ -6,7 +6,7 @@
 DEB_PYTHON_SYSTEM=pysupport
 
 %:
-	dh $@ --buildsystem=python_distutils
+	dh $@ --with python2 --buildsystem=python_distutils
 
 override_dh_auto_build:
 	$(MAKE)

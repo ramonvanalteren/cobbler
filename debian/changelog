@@ -85,17 +85,17 @@ cobbler (2.1.0~git20101130-0ubuntu1~ppa4) natty; urgency=low
     * start on filesystem and net-device-up to prevent starting before 
       networked filesystems.
     * stop on runlevel [016]: Need to stop it during shutdown
+  + debian/control: added python-simplejson to build-depends for running test suite
+  + debian/cobbler.upstart: create /var/lib/cobbler on startup
 
   [ Dave Walker (Daviey) ]
   + debian/patches/05_www-data-as-owner.patch: Change from Fedora/RH/Centos
     default of Apache being run as user apache, to the Debian standard of
     www-data.
+  + debian/rules: Added to %:, --with python2 --buildsystem=python_distutils
 
-  [ Clint Byrum ]
-  * debian/control: added python-simplejson to build-depends for running test suite
-  * debian/cobbler.upstart: create /var/lib/cobbler on startup
 
- -- Clint Byrum <clint@ubuntu.com>  Thu, 16 Dec 2010 11:51:38 -0800
+ -- Dave Walker (Daviey) <DaveWalker@ubuntu.com>  Thu, 16 Dec 2010 20:03:41 +0000
 
 cobbler (2.1.0~git20101130-0ubuntu1~ppa2) unreleased; urgency=low
 
