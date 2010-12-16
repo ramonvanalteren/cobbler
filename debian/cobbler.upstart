@@ -10,5 +10,9 @@ stop on runlevel [016]
 
 respawn
 
+pre-start script
+  [ -d "/var/lib/cobbler" ] || mkdir -p /var/lib/cobbler
+end script
+
 # To add options to your daemon, edit the line below:
 exec /usr/bin/cobblerd --no-daemonize
