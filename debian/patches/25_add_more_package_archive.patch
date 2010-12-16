@@ -1,0 +1,49 @@
+Add archive.ubuntu.com and security.ubuntu.com for valid ubuntu repos.
+
+From: Chuck Short <chuck.short@canonical.com>
+
+
+---
+ cobbler/action_import.py |   32 +++++++++++++++++++++++++++++++-
+ 1 files changed, 31 insertions(+), 1 deletions(-)
+
+diff --git a/cobbler/action_import.py b/cobbler/action_import.py
+index 6640ca9..6f2909c 100644
+--- a/cobbler/action_import.py
++++ b/cobbler/action_import.py
+@@ -1306,4 +1306,34 @@ class UbuntuImporter ( DebianImporter ) :
+       return os_version , "/var/lib/cobbler/kickstarts/sample.seed"
+ 
+   def process_repos(self, main_importer, distro):
+-      pass
++
++      # Create a disabled repository for the new distro and the security updates
++      #
++      # NOTE: We cannot use ks_meta not os_version because they get fixed at a later stage
++      
++      repo = item_repo.Repo(main_importer.config)
++      repo.set_breed( "apt" )
++      repo.set_arch( distro.arch )
++      repo.set_keep_updated( False )
++      repo.yumopts["--ignore-release-gpg"] = None
++      repo.yumopts["--verbose"] = None
++      repo.set_name( distro.name )
++      repo.set_os_version( distro.os_version )
++      # NOTE : The location of the mirror should come from timezone
++      repo.set_mirror( "http://%s.archive.ubuntu.com/ubuntu/dists/%s" % ( 'us' , '@@suite@@' ) )
++
++      security_repo = item_repo.Repo(main_importer.config)
++      security_repo.set_breed( "apt" )
++      security_repo.set_arch( distro.arch )
++      security_repo.set_keep_updated( False )
++      security_repo.yumopts["--ignore-release-gpg"] = None
++      security_repo.yumopts["--verbose"] = None
++      security_repo.set_name( distro.name + "-security" )
++      security_repo.set_os_version( distro.os_version )
++      # There is no offical mirrors for security updates
++      security_repo.set_mirror( "http://security.ubuntu.com/ubuntu/dists/%-security" % '@@suite@@' )
++
++      self.logger_info("Added repos for %s" % distro.name)
++      repos = main_importer.config.repos()
++      repos.add(repo,save=True)
++      repos.add(security_repo,save=True)
