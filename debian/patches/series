@@ -12,3 +12,4 @@
 24_update_ubuntu_support.patch
 25_add_more_package_archive.patch
 26_use_base_files_for_ubuntu.patch
+27_use_sensible_defaults_for_check.patch
