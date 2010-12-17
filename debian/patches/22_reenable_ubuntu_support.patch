@@ -1,0 +1,97 @@
+This patch re-enables Ubuntu in the cd-rom importer. This is the base patch that is needed
+
+From: Chuck Short <chuck.short@canonical.com>
+
+to make everything work.
+---
+ cobbler/action_import.py |   59 +++++++++++++++++++++-------------------------
+ 1 files changed, 27 insertions(+), 32 deletions(-)
+
+diff --git a/cobbler/action_import.py b/cobbler/action_import.py
+index 2021419..f4f782d 100644
+--- a/cobbler/action_import.py
++++ b/cobbler/action_import.py
+@@ -123,7 +123,7 @@ class Importer:
+ 
+         #if self.breed and self.breed.lower() not in [ "redhat", "debian", "ubuntu", "windows" ]:
+         #if self.breed and self.breed.lower() not in [ "redhat" ]:
+-        if self.breed and self.breed.lower() not in [ "redhat", "debian", "vmware" ]:
++        if self.breed and self.breed.lower() not in [ "redhat", "debian", "ubuntu", "vmware" ]:
+             utils.die(self.logger,"Supplied import breed is not supported")
+ 
+         # if --arch is supplied, make sure the user is not importing a path with a different
+@@ -599,10 +599,6 @@ class Importer:
+ 
+             archs = [ proposed_arch ]
+ 
+-        if importer.breed == "ubuntu" and dirname.find("ubuntu-installer") == -1:
+-            self.logger.info("skipping entry, there are no netboot images")
+-            return
+-
+ 
+         if len(archs)>1:
+             if importer.breed in [ "redhat" ]:
+@@ -875,8 +871,8 @@ def import_factory(kerneldir,path,cli_breed,logger):
+     # disabled for 2.0
+     elif breed == "debian":
+         return DebianImporter(logger,rootdir,pkgdir)
+-    #elif breed == "ubuntu":
+-    #    return UbuntuImporter(logger,rootdir,pkgdir)
++    elif breed == "ubuntu":
++        return UbuntuImporter(logger,rootdir,pkgdir)
+     elif breed:
+         utils.die(logger, "Unsupported OS breed %s" % breed)
+ 
+@@ -1289,28 +1285,27 @@ class DebianImporter ( BaseImporter ) :
+        repos.add(repo,save=True)
+        repos.add(security_repo,save=True)
+ 
+-#class UbuntuImporter ( DebianImporter ) :
+-#
+-#   def __init__(self,rootdir,pkgdir):
+-#       DebianImporter.__init__(self,rootdir,pkgdir)
+-#       self.breed = "ubuntu"
+-#
+-#   def get_release_files(self):
+-#       if not self.get_pkgdir():
+-#           return []
+-#       return glob.glob(os.path.join(self.get_pkgdir(), "main/u/ubuntu-docs" , "ubuntu-docs_*"))
+-#
+-#   def set_variance(self, flavor, major, minor, arch):
+-#
+-#       # Release names taken from wikipedia
+-#       dist_names = { '6.4':"dapper", '8.4':"hardy", '8.10':"intrepid", '9.4':"jaunty" }
+-#       dist_vers = "%s.%s" % ( major , minor )
+-#       if not dist_names.has_key( dist_vers ):
+-#           dist_names['4ubuntu2.0'] = "IntrepidIbex"
+-#       os_version = dist_names[dist_vers]
+-#
+-#       return os_version , "/var/lib/cobbler/kickstarts/sample.seed"
+-#
+-#   def process_repos(self, main_importer, distro):
+-#
+-#       pass
++class UbuntuImporter ( DebianImporter ) :
++
++  def __init__(self,logger,rootdir,pkgdir):
++       DebianImporter.__init__(self,logger,rootdir,pkgdir)
++       self.breed = "ubuntu"
++
++  def get_release_files(self):
++       if not self.get_pkgdir():
++           return []
++       return glob.glob(os.path.join(self.get_pkgdir(), "main/u/ubuntu-docs" , "ubuntu-docs_*"))
++
++  def set_variance(self, flavor, major, minor, arch):
++
++      # Release names taken from wikipedia
++      dist_names = { '6.4':"dapper", '8.4':"hardy", '8.10':"intrepid", '9.4':"jaunty" }
++      dist_vers = "%s.%s" % ( major , minor )
++      if not dist_names.has_key( dist_vers ):
++           dist_names['4ubuntu2.0'] = "IntrepidIbex"
++      os_version = dist_names[dist_vers]
++
++      return os_version , "/var/lib/cobbler/kickstarts/sample.seed"
++
++  def process_repos(self, main_importer, distro):
++      pass

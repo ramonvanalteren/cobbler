@@ -4,3 +4,10 @@
 20_ubuntu_web_layout.patch
 11_support-other-wol-tools.patch
 05_www-data-as-owner.patch
+21_reeanble_debian_support.patch
+22_reenable_ubuntu_support.patch
+23_update_debian_support.patch
+24_update_ubuntu_support.patch
+25_add_more_package_archive.patch
+26_use_base_files_for_ubuntu.patch
+27_use_sensible_defaults_for_check.patch
