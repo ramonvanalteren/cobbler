@@ -73,7 +73,12 @@ cobbler (2.1.0~git20101130-0ubuntu1~ppa4) natty; urgency=low
     * debian/patches/26_use_base_files_for_ubuntu.patch
   * Upstreamable patches (patches that should be pushed upstream but isnt yet):
     * debian/patches/27_use_sensible_defaults_for_check.patch
-  * Fix up lintian warnings.
+  * Fix up lintian warnings:
+      * debian/changelog: Fixed line too long warnings.
+      * debian/cobbler.links, debian/cobbler-web.postinst and
+        debian/cobbler-web.postrm:
+        lintian doesnt like symlinking directories in /var/www. Move to 
+        postinst and postrm respecitively.
 
   [ Clint Byrum ]
   + debian/pyversions: removed, not needed and breaks natty
