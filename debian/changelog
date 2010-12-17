@@ -1,3 +1,10 @@
+cobbler (2.1.0~git20101217-0ubuntu1~ppa1) natty; urgency=low
+
+  [Chuck Short]
+  * New upstream snapshot.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Fri, 17 Dec 2010 12:42:51 -0500
+
 cobbler (2.1.0~git20101130-0ubuntu1~ppa4) natty; urgency=low
 
   [Dustin Kirkland]

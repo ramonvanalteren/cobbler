@@ -182,7 +182,7 @@ class RepoSync:
                         if createrepo_ver >= "0.9.7":
                             mdoptions.append("--deltas")
                         else:
-                            utils.die(self.logger,"this repo has presto metadata; you must upgrade createrepo to >= 0.9.7 first and then need to resync the repo through cobbler.")
+                            self.logger.error("this repo has presto metadata; you must upgrade createrepo to >= 0.9.7 first and then need to resync the repo through cobbler.")
 
             blended = utils.blender(self.api, False, repo)
             flags = blended.get("createrepo_flags","(ERROR: FLAGS)")
@@ -258,7 +258,7 @@ class RepoSync:
         dest_path = os.path.join("/var/www/cobbler/repo_mirror", repo.name)
         temp_path = os.path.join(dest_path, ".origin")
 
-        if not os.path.isdir(temp_path) and repo.mirror_locally:
+        if not os.path.isdir(temp_path):
             # FIXME: there's a chance this might break the RHN D/L case
             os.makedirs(temp_path)
          

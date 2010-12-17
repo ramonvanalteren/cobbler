@@ -835,6 +835,16 @@ def hash_to_string(hash):
           buffer = buffer + str(key) + "=" + str(value) + " "
     return buffer
 
+def run_this(cmd, args, logger):
+    """
+    A simple wrapper around subprocess calls.
+    """
+
+    my_cmd = cmd % args
+    rc = subprocess_call(logger,my_cmd,shell=True)
+    if rc != 0:
+        die(logger,"Command failed")
+
 def run_triggers(api,ref,globber,additional=[],logger=None):
     """
     Runs all the trigger scripts in a given directory.
@@ -917,6 +927,14 @@ def check_dist():
     Determines what distro we're running under.  
     """
     if os.path.exists("/etc/debian_version"):
+       try:
+           release = sub_process.check_output(("lsb_release","--id","--short")).rstrip()
+           if release == 'Ubuntu':
+              return "ubuntu"
+       except sub_process.CalledProcessError:
+           pass
+       except OSError:
+           pass
        return "debian"
     elif os.path.exists("/etc/SuSE-release"):
        return "suse"
@@ -953,6 +971,10 @@ def os_release():
       version = parts[0]
       rest = parts[1]
       make = "debian"
+      return (make, float(version))
+   elif check_dist() == "ubuntu":
+      version = sub_process.check_output(("lsb_release","--release","--short")).rstrip()
+      make = "ubuntu"
       return (make, float(version))
    elif check_dist() == "suse":
       fd = open("/etc/SuSE-release")
@@ -1219,6 +1241,19 @@ def mkdir(path,mode=0755,logger=None):
            if logger is not None:
                log_exc(logger)
            raise CX(_("Error creating") % path)
+
+def path_tail(apath, bpath):
+    """
+    Given two paths (B is longer than A), find the part in B not in A
+    """
+    position = bpath.find(apath)
+    if position != 0:
+        die(self.logger, "- warning: possible symlink traversal?: %s")
+    rposition = position + len(self.mirror)
+    result = bpath[rposition:]
+    if not result.startswith("/"):
+        result = "/" + result
+    return result
 
 def set_redhat_management_key(self,key):
    self.redhat_management_key = key
@@ -1887,6 +1922,16 @@ def local_get_cobbler_api_url():
        traceback.print_exc()
        raise CX("/etc/cobbler/settings is not a valid YAML file")
     return "http://%s:%s/cobbler_api" % (data.get("server","127.0.0.1"),data.get("http_port","80"))
+
+def get_ldap_template(ldaptype=None):
+    """
+    Return ldap command for type
+    """
+    if ldaptype:
+        ldappath = "/etc/cobbler/ldap/ldap_%s.template" % ldaptype
+        if os.path.isfile(ldappath):
+            return ldappath
+    return None
 
 def local_get_cobbler_xmlrpc_url():
     # Load xmlrpc port
