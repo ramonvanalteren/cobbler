@@ -73,6 +73,7 @@ cobbler (2.1.0~git20101130-0ubuntu1~ppa4) natty; urgency=low
     * debian/patches/26_use_base_files_for_ubuntu.patch
   * Upstreamable patches (patches that should be pushed upstream but isnt yet):
     * debian/patches/27_use_sensible_defaults_for_check.patch
+  * Fix up lintian warnings.
 
   [ Clint Byrum ]
   + debian/pyversions: removed, not needed and breaks natty
@@ -84,15 +85,17 @@ cobbler (2.1.0~git20101130-0ubuntu1~ppa4) natty; urgency=low
   + recommending hardlink
   + debian/upstart: 
     * pass --no-daemonize to cobblerd to prevent daemonization
-    * start on filesystem and net-device-up to prevent starting before 
-      networked filesystems.
+    * start on filesystem and net-device-up to prevent starting 
+      before networked filesystems.
     * stop on runlevel [016]: Need to stop it during shutdown
-  + debian/control: added python-simplejson to build-depends for running test suite
+  + debian/control: added python-simplejson to build-depends for running 
+    test suite
   + debian/cobbler.upstart: create /var/lib/cobbler on startup
   + debian/control: adding cobbler-web binary package
   + debian/cobbler-web.*: web UI binary package
   + debian/cobbler.*: moving cobbler proxy config into this package
-  + debian/cobbler-common.*: adding dist-created skeleton data files in /var/lib/cobbler
+  + debian/cobbler-common.*: adding dist-created skeleton data files in 
+    /var/lib/cobbler
 
   [ Dave Walker (Daviey) ]
   + debian/patches/05_www-data-as-owner.patch: Change from Fedora/RH/Centos
