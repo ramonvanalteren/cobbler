@@ -5,6 +5,15 @@ cobbler (2.1.0~git20101217-0ubuntu1~ppa1) natty; urgency=low
     + Dropped, already accepted upstream:
       - debian/patches/03_manpage-whatis-entries.patch
       - debian/patches/10_detect_ubuntu.patch
+    + Dropped obsolete patches
+      - debian/patches/26_use_base_files_for_ubuntu.patch
+      - debian/patches/25_add_more_package_archive.patch
+      - debian/patches/24_update_ubuntu_support.patch
+      - debian/patches/23_update_debian_support.patch
+      - debian/patches/22_reenable_ubuntu_support.patch
+      - debian/patches/21_reeanble_debian_support.patch
+    + debian/patches/27-cobbler-import-debian-ubuntu.patch:
+      Re-enable Debian/Ubuntu import.
 
  -- Chuck Short <zulcss@ubuntu.com>  Fri, 17 Dec 2010 12:42:51 -0500
 
