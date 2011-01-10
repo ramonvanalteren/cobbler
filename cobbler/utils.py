@@ -835,6 +835,43 @@ def hash_to_string(hash):
           buffer = buffer + str(key) + "=" + str(value) + " "
     return buffer
 
+def rsync_files(src, dst, args, logger=None, quiet=True):
+    """
+    Sync files from src to dst. The extra arguments specified
+    by args are appended to the command
+    """
+
+    if args == None:
+        args = ''
+
+    RSYNC_CMD = "rsync -a %%s '%%s' %%s %s --exclude-from=/etc/cobbler/rsync.exclude" % args
+    if quiet:
+        RSYNC_CMD += " --quiet"
+    else:
+        RSYNC_CMD += " --progress"
+
+    # Make sure we put a "/" on the end of the source
+    # and destination to make sure we don't cause any
+    # rsync weirdness
+    if not dst.endswith("/"):
+        dst = "%s/" % dst
+    if not src.endswith("/"):
+        src = "%s/" % src
+
+    spacer = ""
+    if not src.startswith("rsync://") and not src.startswith("/"):
+        spacer = ' -e "ssh" '
+
+    rsync_cmd = RSYNC_CMD % (spacer,src,dst)
+    try:
+        res = subprocess_call(logger, rsync_cmd)
+        if res != 0:
+            die(logger, "Failed to run the rsync command: '%s'" % rsync_cmd)
+    except:
+        return False
+
+    return True
+
 def run_this(cmd, args, logger):
     """
     A simple wrapper around subprocess calls.
@@ -1008,6 +1045,8 @@ def tftpboot_location():
     (make,version) = os_release()
     if make == "fedora" and version >= 9:
        return "/var/lib/tftpboot"
+    elif make == "debian" or make == "ubuntu":
+       return "/var/lib/tftpboot"
     return "/tftpboot"
 
 def can_do_public_content(api):
@@ -1082,11 +1121,11 @@ def cachefile(src, dst, api=None, logger=None):
         logger.info("trying to create cache file %s"%cachefile)
         copyfile(src,cachefile,api=api,logger=logger)
 
-    logger.info("trying cachelink %s -> %s -> %s"%(src,cachefile,dst))
+    logger.debug("trying cachelink %s -> %s -> %s"%(src,cachefile,dst))
     rc = os.link(cachefile,dst)
     return rc
 
-def linkfile(src, dst, symlink_ok=False, api=None, logger=None):
+def linkfile(src, dst, symlink_ok=False, cache=True, api=None, logger=None):
     """
     Attempt to create a link dst that points to src.  Because file
     systems suck we attempt several different methods or bail to
@@ -1143,10 +1182,11 @@ def linkfile(src, dst, symlink_ok=False, api=None, logger=None):
         except (IOError, OSError):
             pass
 
-    try:
-        return cachefile(src,dst,api=api,logger=logger)
-    except (IOError, OSError):
-        pass
+    if cache:
+        try:
+            return cachefile(src,dst,api=api,logger=logger)
+        except (IOError, OSError):
+            pass
 
     # we couldn't hardlink and we couldn't symlink so we must copy
 
@@ -1189,14 +1229,14 @@ def check_openfiles(src):
             raise
 
 
-def copyfile_pattern(pattern,dst,require_match=True,symlink_ok=False,api=None,logger=None):
+def copyfile_pattern(pattern,dst,require_match=True,symlink_ok=False,cache=True,api=None,logger=None):
     files = glob.glob(pattern)
     if require_match and not len(files) > 0:
         raise CX(_("Could not find files matching %s") % pattern)
     for file in files:
         base = os.path.basename(file)
         dst1 = os.path.join(dst,os.path.basename(file))
-        linkfile(file,dst1,symlink_ok=symlink_ok,api=api,logger=logger)
+        linkfile(file,dst1,symlink_ok=symlink_ok,cache=cache,api=api,logger=logger)
 
 def rmfile(path,logger=None):
     try:
@@ -1630,11 +1670,12 @@ def subprocess_sp(logger, cmd, shell=True):
             log_exc(logger)
         die(logger, "OS Error, command not found?  While running: %s" % cmd)
 
-    data = sp.communicate()[0]
+    (out,err) = sp.communicate()
     rc = sp.returncode
     if logger is not None:
-        logger.info("received: %s" % data)
-    return data, rc
+        logger.info("received on stdout: %s" % out)
+        logger.debug("recieved on stderr: %s" % err)
+    return out, rc
 
 def subprocess_call(logger, cmd, shell=True):
     data, rc = subprocess_sp(logger, cmd, shell=shell)

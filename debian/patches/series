@@ -4,5 +4,3 @@
 20_ubuntu_web_layout.patch
 11_support-other-wol-tools.patch
 05_www-data-as-owner.patch
-27_use_sensible_defaults_for_check.patch
-27-cobbler-import-debian-ubuntu.patch
