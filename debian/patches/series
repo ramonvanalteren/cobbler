@@ -4,3 +4,4 @@
 20_ubuntu_web_layout.patch
 11_support-other-wol-tools.patch
 05_www-data-as-owner.patch
+21_cobbler_use_netboot.patch
