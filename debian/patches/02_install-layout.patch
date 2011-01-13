@@ -1,34 +1,12 @@
-=== modified file 'Makefile'
-Index: ubuntu/Makefile
-===================================================================
---- ubuntu.orig/Makefile	2010-12-14 11:39:29.195488000 -0800
-+++ ubuntu/Makefile	2010-12-16 12:52:58.901700001 -0800
-@@ -40,7 +40,7 @@
- 	chown -R apache /usr/share/cobbler/web
+diff -Naurp cobbler-2.1.0~git20110113.orig//Makefile cobbler-2.1.0~git20110113//Makefile
+--- cobbler-2.1.0~git20110113.orig//Makefile	2011-01-13 11:24:51.982788404 -0500
++++ cobbler-2.1.0~git20110113//Makefile	2011-01-13 11:26:13.688161690 -0500
+@@ -37,7 +37,7 @@ build:
+ 	python setup.py build -f
+ 
+ install: build
+-	python setup.py install -f
++	python setup.py install -f --install-layout=deb
+ 	chown -R $(www-user) /usr/share/cobbler/web
  
  debinstall:
--	python setup.py install -f --root $(DESTDIR)
-+	python setup.py install -f --root $(DESTDIR) --install-layout=deb
- 
- devinstall:
- 	-rm -rf /usr/share/cobbler
-Index: ubuntu/setup.py
-===================================================================
---- ubuntu.orig/setup.py	2010-12-16 12:52:58.891700001 -0800
-+++ ubuntu/setup.py	2010-12-16 12:54:56.641700000 -0800
-@@ -129,7 +129,6 @@
-     logpath     = "/var/log/"
- 
-     webroot     = "/usr/share/cobbler/webroot/"
--    webconfig   = "/etc/httpd/conf.d/"
-     webcontent  = webroot + "cobbler_webui_content/"
- 
- 
-@@ -166,7 +165,6 @@
-             # tftpd, hide in /usr/sbin
-             ("/usr/sbin", ["scripts/tftpd.py"]),
- 
--            ("%s" % webconfig,              ["config/cobbler_web.conf"]),
-             ("%s" % initpath,               ["config/cobblerd"]),
-             ("%s" % docpath,                ["docs/*.gz"]),
-             ("installer_templates",         ["installer_templates/*"]),

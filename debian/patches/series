@@ -1,7 +1,5 @@
-01_webroot.patch
+01-ubuntu-webroot.patch
 02_install-layout.patch
 04_drop-init-script.patch
-20_ubuntu_web_layout.patch
 11_support-other-wol-tools.patch
-05_www-data-as-owner.patch
 21_cobbler_use_netboot.patch
