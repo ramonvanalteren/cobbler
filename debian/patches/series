@@ -1,5 +1,5 @@
 01-ubuntu-webroot.patch
 02_install-layout.patch
-04_drop-init-script.patch
 11_support-other-wol-tools.patch
 21_cobbler_use_netboot.patch
+debian-changes-2.1.0~git20110113-0ubuntu1
