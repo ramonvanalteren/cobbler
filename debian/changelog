@@ -6,6 +6,7 @@ cobbler (2.1.0~git20110113-0ubuntu1) natty; urgency=low
   * Dropped debian/patches/01_webroot.patch, debian/patches/05_222-data-as-owner.patch
     and debian/patches/20_ubuntu_web_layout.patch.
   * Refreshed debian/patches/02_install_layout.patch
+  * Refreshed debian/patches/04_drop_init-script.patch
 
  -- Chuck Short <zulcss@ubuntu.com>  Thu, 13 Jan 2011 10:40:03 -0500
 

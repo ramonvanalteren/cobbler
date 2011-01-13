@@ -1,12 +1,10 @@
-=== modified file 'setup.py'
-Index: ubuntu/setup.py
-===================================================================
---- ubuntu.orig/setup.py	2010-12-16 13:00:32.000000000 -0800
-+++ ubuntu/setup.py	2010-12-16 13:01:24.751700002 -0800
-@@ -165,7 +165,6 @@
-             # tftpd, hide in /usr/sbin
-             ("/usr/sbin", ["scripts/tftpd.py"]),
+diff -Naurp cobbler-2.1.0~git20110113.orig//setup.py cobbler-2.1.0~git20110113//setup.py
+--- cobbler-2.1.0~git20110113.orig//setup.py	2011-01-13 10:36:32.000000000 -0500
++++ cobbler-2.1.0~git20110113//setup.py	2011-01-13 11:36:25.709449336 -0500
+@@ -174,7 +174,6 @@ if __name__ == "__main__":
  
+             ("%s" % webconfig,              ["config/cobbler.conf"]),
+             ("%s" % webconfig,              ["config/cobbler_web.conf"]),
 -            ("%s" % initpath,               ["config/cobblerd"]),
              ("%s" % docpath,                ["docs/*.gz"]),
              ("installer_templates",         ["installer_templates/*"]),
