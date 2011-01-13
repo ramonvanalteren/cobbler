@@ -4,6 +4,7 @@ cobbler (2.1.0~git20110113-0ubuntu1) natty; urgency=low
   * New upstream release.
   * Dropped debian/cobbler-web.links.
   * Refreshed debian/patches/05_www-data-as-owner.patch
+    and debian/patches/01_webroot.patch.
 
  -- Chuck Short <zulcss@ubuntu.com>  Thu, 13 Jan 2011 10:40:03 -0500
 
