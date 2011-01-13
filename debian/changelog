@@ -1,3 +1,12 @@
+cobbler (2.1.0~git20110113-0ubuntu1) natty; urgency=low
+
+  [Chuck Short]
+  * New upstream release.
+  * Dropped debian/cobbler-web.links.
+  * Refreshed debian/patches/05_www-data-as-owner.patch
+
+ -- Chuck Short <zulcss@ubuntu.com>  Thu, 13 Jan 2011 10:40:03 -0500
+
 cobbler (2.1.0~git20110110-0ubuntu1~ppa2) natty; urgency=low
 
   [Chuck Short]

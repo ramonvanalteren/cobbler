@@ -1,68 +1,58 @@
-Description: Change from Fedora/RH/Centos default of Apache being run as user apache, to the Debian standard of www-data.
-Author: Dave Walker (Daviey) <DaveWalker@ubuntu.com>
-Forwarded: no
-Last-Update: 2010-12-15
-
-=== modified file 'Makefile'
---- a/Makefile
-+++ b/Makefile
-@@ -37,7 +37,7 @@
+diff -Naurp cobbler-2.1.0~git20110113.orig//build_backup/Makefile cobbler-2.1.0~git20110113//build_backup/Makefile
+--- cobbler-2.1.0~git20110113.orig//build_backup/Makefile	2011-01-13 10:36:31.000000000 -0500
++++ cobbler-2.1.0~git20110113//build_backup/Makefile	2011-01-13 10:47:24.906401218 -0500
+@@ -6,6 +6,7 @@ prefix=devinstall
+ statepath=/tmp/cobbler_settings/$(prefix)
  
- install: build
- 	python setup.py install -f
--	chown -R apache /usr/share/cobbler/web
-+	chown -R www-data /usr/share/cobbler/web
+ all: clean build
++www-user: www-data
  
- debinstall:
- 	python setup.py install -f --root $(DESTDIR) --install-layout=deb
-@@ -72,7 +72,7 @@
- 	cp $(statepath)/dhcp.template /etc/cobbler/dhcp.template
- 	cp $(statepath)/rsync.template /etc/cobbler/rsync.template
- 	find /var/lib/cobbler/triggers | xargs chmod +x
--	chown -R apache /var/www/cobbler
-+	chown -R www-data /var/www/cobbler
- 	chmod -R +x /var/www/cobbler/web
- 	chmod -R +x /var/www/cobbler/svc
- 	rm -rf $(statepath)
---- a/build_backup/Makefile
-+++ b/build_backup/Makefile
-@@ -42,7 +42,7 @@
+ clean:
+ 	-rm -rf build rpm-build
+@@ -42,7 +43,7 @@ build: manpage
  
  install: build manpage
  	python setup.py install -f
 -	chown -R apache /usr/share/cobbler/web
-+	chown -R www-data /usr/share/cobbler/web
++	chown -R $(www-user) /usr/share/cobbler/web
  
  debinstall: manpage
  	python setup.py install -f --root $(DESTDIR)
-@@ -77,7 +77,7 @@
+@@ -77,7 +78,7 @@ restorestate:
  	cp $(statepath)/dhcp.template /etc/cobbler/dhcp.template
  	cp $(statepath)/rsync.template /etc/cobbler/rsync.template
  	find /var/lib/cobbler/triggers | xargs chmod +x
 -	chown -R apache /var/www/cobbler
-+	chown -R www-data /var/www/cobbler
++	chown -R $(www-user) /var/www/cobbler
  	chmod -R +x /var/www/cobbler/web
  	chmod -R +x /var/www/cobbler/svc
  	rm -rf $(statepath)
---- a/cobbler/action_reposync.py
-+++ b/cobbler/action_reposync.py
-@@ -563,7 +563,7 @@
-         a safeguard.
-         """
-         # all_path = os.path.join(repo_path, "*")
--        cmd1 = "chown -R root:apache %s" % repo_path
-+        cmd1 = "chown -R root:www-data %s" % repo_path
-         utils.subprocess_call(self.logger, cmd1)
+diff -Naurp cobbler-2.1.0~git20110113.orig//Makefile cobbler-2.1.0~git20110113//Makefile
+--- cobbler-2.1.0~git20110113.orig//Makefile	2011-01-13 10:36:31.000000000 -0500
++++ cobbler-2.1.0~git20110113//Makefile	2011-01-13 10:46:43.687348648 -0500
+@@ -6,6 +6,7 @@ prefix=devinstall
+ statepath=/tmp/cobbler_settings/$(prefix)
  
-         cmd2 = "chmod -R 755 %s" % repo_path
---- a/cobbler/cobblerd.py
-+++ b/cobbler/cobblerd.py
-@@ -61,7 +61,7 @@
-     fd.write(binascii.hexlify(data))
-     fd.close()
-     utils.os_system("chmod 700 /var/lib/cobbler/web.ss")
--    utils.os_system("chown apache /var/lib/cobbler/web.ss")
-+    utils.os_system("chown www-data /var/lib/cobbler/web.ss")
-     return 1
+ all: clean build
++www-user: www-data
  
- def do_xmlrpc_tasks(bootapi, settings, xmlrpc_port):
+ clean:
+ 	-rm -rf build rpm-build
+@@ -37,7 +38,7 @@ build:
+ 
+ install: build
+ 	python setup.py install -f
+-	chown -R apache /usr/share/cobbler/web
++	chown -R $(www-user) /usr/share/cobbler/web
+ 
+ debinstall:
+ 	python setup.py install -f --root $(DESTDIR)
+@@ -72,7 +73,7 @@ restorestate:
+ 	cp $(statepath)/dhcp.template /etc/cobbler/dhcp.template
+ 	cp $(statepath)/rsync.template /etc/cobbler/rsync.template
+ 	find /var/lib/cobbler/triggers | xargs chmod +x
+-	chown -R apache /var/www/cobbler
++	chown -R $(www-user) /var/www/cobbler
+ 	chmod -R +x /var/www/cobbler/web
+ 	chmod -R +x /var/www/cobbler/svc
+ 	rm -rf $(statepath)
