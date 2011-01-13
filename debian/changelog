@@ -1,3 +1,10 @@
+cobbler (2.1.0~git20110113-0ubuntu2) UNRELEASED; urgency=low
+
+  * debian/control: Updated maintainer to match current policy
+  * debian/patches/series: Removed patch that was previously dropped
+
+ -- Dave Walker (Daviey) <DaveWalker@ubuntu.com>  Thu, 13 Jan 2011 22:04:01 +0000
+
 cobbler (2.1.0~git20110113-0ubuntu1) natty; urgency=low
 
   * Initial release

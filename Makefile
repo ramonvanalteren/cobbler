@@ -40,7 +40,7 @@ install: build
 	chown -R apache /usr/share/cobbler/web
 
 debinstall:
-	python setup.py install -f --root $(DESTDIR) --install-layout=deb
+	python setup.py install -f --root $(DESTDIR)
 
 devinstall:
 	-rm -rf /usr/share/cobbler
