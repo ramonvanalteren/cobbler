@@ -9,6 +9,7 @@ cobbler (2.1.0~git20110113-0ubuntu1) UNRELEASED; urgency=low
   * debian/patches/*: Added initial DEP-3 patch tagging.
   * debian/patches/03-localboot-value.patch: Changed localboot value
     to be more reliable with later versions of (sys|pxe)linux.
+  * debian/rules: Removed get-orig-source as it is currently not required.
 
   [ Clint Byrum ]
   * debian/copyright: changed to DEP5 format and added 
