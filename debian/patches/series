@@ -1,4 +1,6 @@
 01-ubuntu-webroot.patch
 02_install-layout.patch
+03-localboot-value.patch
 11_support-other-wol-tools.patch
 21_cobbler_use_netboot.patch
+localboot-value.patch
