@@ -1,3 +1,5 @@
+Description: Extending the current Wake-On-Lan support for wider distro compatability.
+Author: Dustin Kirkland (kirkland@ubuntu.com)
 === modified file 'templates/power/power_ether_wake.template'
 --- a/templates/power/power_ether_wake.template	2010-06-16 21:34:44 +0000
 +++ b/templates/power/power_ether_wake.template	2010-12-14 18:35:36 +0000

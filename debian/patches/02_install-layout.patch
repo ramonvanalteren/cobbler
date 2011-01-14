@@ -1,3 +1,5 @@
+Description: Make python dist-utils process in deb format.
+Author: Dustin Kirkland <kirkland@ubuntu.com>
 diff -Naurp cobbler-2.1.0~git20110113.orig//Makefile cobbler-2.1.0~git20110113//Makefile
 --- cobbler-2.1.0~git20110113.orig//Makefile	2011-01-13 11:24:51.982788404 -0500
 +++ cobbler-2.1.0~git20110113//Makefile	2011-01-13 11:26:13.688161690 -0500

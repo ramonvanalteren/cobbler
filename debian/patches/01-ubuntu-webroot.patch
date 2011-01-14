@@ -1,3 +1,5 @@
+Description: Wider support for varying web root of more OS flavours.
+Author: Dave Walker (Daviey) <DaveWalker@ubuntu.com>, Chuck Short <zulcss@ubuntu.com>
 diff -Naurp cobbler-2.1.0~git20110113.orig//build_backup/Makefile cobbler-2.1.0~git20110113//build_backup/Makefile
 --- cobbler-2.1.0~git20110113.orig//build_backup/Makefile	2011-01-13 10:36:31.000000000 -0500
 +++ cobbler-2.1.0~git20110113//build_backup/Makefile	2011-01-13 11:55:51.292099627 -0500
