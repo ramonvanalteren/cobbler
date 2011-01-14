@@ -1,5 +1,6 @@
 Description: Use the Ubuntu netboot ramdisk and kernel from installer.
 Author: Chuck Short <zulcss@ubuntu.com>
+Forwarded: no
 diff -Naurp cobbler.orig//cobbler/modules/manage_import_debian_ubuntu.py cobbler//cobbler/modules/manage_import_debian_ubuntu.py
 --- cobbler.orig//cobbler/modules/manage_import_debian_ubuntu.py	2011-01-12 10:49:29.832365488 -0500
 +++ cobbler//cobbler/modules/manage_import_debian_ubuntu.py	2011-01-12 11:21:35.294189788 -0500
