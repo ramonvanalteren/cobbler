@@ -160,3 +160,9 @@ License: GPL-2
  You should have received a copy of the GNU General Public License
  along with this program; if not, write to the Free Software
  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+Files: scripts/tftpd.py
+Copyright: n/a
+License: PD
+ LICENSE
+   This script is in the public domain, free from copyrights or restrictions
