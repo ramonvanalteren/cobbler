@@ -118,7 +118,7 @@ Package: libcobbler4j-java
 Architecture: any
 Depends:
  libredstone-xmlrpc-java,
- java2-runtime | default-jre-headless,
+ default-jre-headless | java2-runtime-headless,
  ${misc:Depends}
 Description: Cobbler Install Server API
  Cobbler is a network install server. Cobbler supports PXE, virtualized
