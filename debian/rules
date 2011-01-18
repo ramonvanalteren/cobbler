@@ -8,6 +8,7 @@
 
 override_dh_auto_build:
 	$(MAKE)
+	ant -f cobbler4j/build.xml
 
 override_dh_auto_test:
 	nosetests cobbler/*.py || true
