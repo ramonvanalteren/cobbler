@@ -12,6 +12,11 @@ Build-Depends: debhelper (>= 7.0.50),
  python-netaddr,
  python-nose,
  python-simplejson,
+ ant,
+ javahelper,
+ junit4,
+ libredstone-xmlrpc-java,
+ default-jdk
 XS-Python-Version: 2.7
 Standards-Version: 3.9.1
 Homepage: https://fedoraproject.org/cobbler
@@ -108,3 +113,20 @@ Description: kickstart-over-a-network (koan)
  Koan stands for kickstart-over-a-network and allows for both network 
  installation of new virtualized guests and re-installation of an existing 
  system.  For use with a boot-server configure with Cobbler.
+
+Package: libcobbler4j-java
+Architecture: all
+Depends:
+ libredstone-xmlrpc-java,
+ default-jre-headless | java2-runtime-headless,
+ ${misc:Depends}
+Description: Cobbler Install Server API
+ Cobbler is a network install server. Cobbler supports PXE, virtualized
+ installs, and reinstalling existing Linux machines. The last two modes use
+ a helper tool, 'koan', that integrates with cobbler. Cobbler's advanced
+ features include importing distributions from DVDs and rsync mirrors,
+ kickstart templating, integrated yum mirroring, and built-in DHCP/DNS
+ Management. Cobbler has a Python and XMLRPC API for integration with other
+ applications. There is also a web interface.
+ .
+ This package provides the Java API for cobbler.

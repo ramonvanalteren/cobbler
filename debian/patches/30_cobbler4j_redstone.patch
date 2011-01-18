@@ -1,0 +1,21 @@
+Description: Use packaged version of redstone-xmlrpc-client Java library.
+Author: James Page <james.page@canonical.com> 
+Forwarded: not-needed
+Index: cobbler-0.1/cobbler4j/build.xml
+===================================================================
+--- cobbler-0.1.orig/cobbler4j/build.xml	2011-01-18 19:32:07.309999996 +0000
++++ cobbler-0.1/cobbler4j/build.xml	2011-01-18 19:32:35.890000000 +0000
+@@ -5,12 +5,10 @@
+     <target name="init" depends="clean">
+         <path id="class.path">
+             <pathelement location="build"/>
+-            <fileset dir="lib">
+-                <include name="**/*.jar"/>
+-            </fileset>
+             <!-- Standard location for Fedora/RHEL junit4 package. -->
+             <fileset dir="/usr/share/java/">
+                 <include name="junit4.jar"/>
++		<include name="redstone-xmlrpc-client.jar"/>
+             </fileset>
+         </path>
+     </target>
