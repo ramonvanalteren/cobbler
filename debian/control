@@ -29,7 +29,8 @@ Depends: ${misc:Depends}, ${python:Depends},
 Recommends: hardlink,
  powerwake,
  tftpd-hpa,
- cobbler-web
+ cobbler-web,
+ debmirror
 Suggests: createrepo,
  dhcp3-server,
  genisoimage,

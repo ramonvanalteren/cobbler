@@ -3,3 +3,4 @@
 03-localboot-value.patch
 11_support-other-wol-tools.patch
 21_cobbler_use_netboot.patch
+22_re-enable_debmirror.patch
