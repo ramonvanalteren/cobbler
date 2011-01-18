@@ -7,12 +7,27 @@
 	dh $@ --with python2,javahelper
 
 override_dh_auto_build:
+	[ -d excluded_files/cobbler ] || mkdir -p excluded_files/cobbler
+	[ -d excluded_files/koan ] || mkdir -p excluded_files/koan
+	mv -f cobbler/sub_process.py excluded_files/cobbler
+	mv -f koan/sub_process.py excluded_files/koan
+	mv -f koan/opt_parse.py excluded_files/koan
+	mv -f koan/text_wrap.py excluded_files/koan
 	$(MAKE)
 	ant -f cobbler4j/build.xml
 
 override_dh_auto_clean:
 	dh_auto_clean
 	ant -f cobbler4j/build.xml clean
+	if [ -d excluded_files/cobbler ] ; then \
+      mv excluded_files/cobbler/* cobbler ;\
+    fi
+	if [ -d excluded_files/koan ] ; then \
+      mv excluded_files/koan/* koan ;\
+    fi
+	if [ -d excluded_files ] ; then \
+      rm -rf excluded_files ;\
+    fi
 
 override_dh_auto_test:
 	nosetests cobbler/*.py || true
