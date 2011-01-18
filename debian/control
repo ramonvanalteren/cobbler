@@ -115,7 +115,7 @@ Description: kickstart-over-a-network (koan)
  system.  For use with a boot-server configure with Cobbler.
 
 Package: libcobbler4j-java
-Architecture: any
+Architecture: all
 Depends:
  libredstone-xmlrpc-java,
  default-jre-headless | java2-runtime-headless,
