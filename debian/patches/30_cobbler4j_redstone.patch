@@ -1,3 +1,6 @@
+Description: Use packaged version of redstone-xmlrpc-client Java library.
+Author: James Page <james.page@canonical.com> 
+Forwarded: not-needed
 Index: cobbler-0.1/cobbler4j/build.xml
 ===================================================================
 --- cobbler-0.1.orig/cobbler4j/build.xml	2011-01-18 19:32:07.309999996 +0000
