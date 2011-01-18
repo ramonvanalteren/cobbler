@@ -2,9 +2,9 @@ Description: Extending the current Wake-On-Lan support for wider distro compatab
 Author: Dustin Kirkland (kirkland@ubuntu.com)
 Forwarded: no
 === modified file 'templates/power/power_ether_wake.template'
---- a/templates/power/power_ether_wake.template	2010-06-16 21:34:44 +0000
-+++ b/templates/power/power_ether_wake.template	2010-12-14 18:35:36 +0000
-@@ -1,1 +1,9 @@
+--- a/templates/power/power_ether_wake.template
++++ b/templates/power/power_ether_wake.template
+@@ -1 +1,9 @@
 -/sbin/ether-wake -i eth0 "$power_address"
 +if [ -x /sbin/ether-wake ]; then
 +	/sbin/ether-wake -i eth0 "$power_address"
@@ -15,4 +15,3 @@ Forwarded: no
 +elif [ -x /usr/sbin/etherwake ]; then
 +	/usr/sbin/etherwake "$power_address"
 +fi
-
