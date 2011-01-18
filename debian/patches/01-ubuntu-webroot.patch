@@ -72,9 +72,9 @@ diff -Naurp cobbler-2.1.0~git20110113.orig//setup.py cobbler-2.1.0~git20110113//
  
 -    webroot     = "/var/www/"
 +    if os.path.exists("/etc/Suse-release"):
-+        webroot = "/srv/www"
-+    elif os.path.exists("/etc/debian-version"):
-+        webroot = "/usr/share/cobbler/webroot"
++        webroot = "/srv/www/"
++    elif os.path.exists("/etc/debian_version"):
++        webroot = "/usr/share/cobbler/webroot/"
 +    else:
 +        webroot     = "/var/www/"
 +
