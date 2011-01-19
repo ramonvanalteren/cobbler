@@ -1,2 +1,8 @@
 This package uses quilt to manage patches; see:
     /usr/share/doc/quilt/README.source
+
+To generate a pristine tarball for release:
+	fakeroot debian/rules get-orig-source
+
+Patches are applied against the pristine tarball
+and to build debs use the pristine tarball as well.
