@@ -15,7 +15,7 @@ override_dh_auto_build:
 	mv -f koan/sub_process.py excluded_files/koan
 	mv -f koan/opt_parse.py excluded_files/koan
 	mv -f koan/text_wrap.py excluded_files/koan
-	$(MAKE)
+	python setup.py build
 	ant -f cobbler4j/build.xml
 
 override_dh_auto_clean:
@@ -35,7 +35,7 @@ override_dh_auto_test:
 	nosetests cobbler/*.py || true
 
 override_dh_auto_install:
-	$(MAKE) debinstall DESTDIR=$(CURDIR)/debian/tmp
+	python setup.py install -f --install-layout=deb --root=$(CURDIR)/debian/tmp
 
 get-orig-source:
 	python setup.py sdist
