@@ -3,6 +3,8 @@
 # Verbose mode
 # export DH_VERBOSE=1
 
+RELEASE_VERSION := 1881
+
 %:
 	dh $@ --with python2,javahelper
 
@@ -34,3 +36,12 @@ override_dh_auto_test:
 
 override_dh_auto_install:
 	$(MAKE) debinstall DESTDIR=$(CURDIR)/debian/tmp
+
+get-orig-source:
+	python setup.py sdist
+	tar -zxvf $(CURDIR)/dist/cobbler-2.1.0.tar.gz -C $(CURDIR)/dist
+	rm $(CURDIR)/dist/cobbler-2.1.0.tar.gz
+	mkdir -p $(CURDIR)/dist/cobbler-2.1.0/cobbler4j
+	cp -rp $(CURDIR)/cobbler4j/* $(CURDIR)/dist/cobbler-2.1.0/cobbler4j
+	mv $(CURDIR)/dist/cobbler-2.1.0 $(CURDIR)/dist/cobbler-2.1.0~bzr$(RELEASE_VERSION)
+	cd $(CURDIR)/dist ; tar zcvf ../../cobbler-2.1.0~bzr$(RELEASE_VERSION).tar.gz cobbler-2.1.0~bzr$(RELEASE_VERSION)
