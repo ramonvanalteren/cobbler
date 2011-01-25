@@ -1,3 +1,11 @@
+cobbler (2.1.0~bzr1881-0ubuntu2) natty; urgency=low
+
+  * debian/control: For binary package koan, do not depend on cobbler as it should 
+    be functional separately. However, the additional dependency of libvirt-bin 
+    has been added.  (LP: #707113)
+
+ -- Dave Walker (Daviey) <DaveWalker@ubuntu.com>  Tue, 25 Jan 2011 13:51:41 +0000
+
 cobbler (2.1.0~bzr1881-0ubuntu1) natty; urgency=low
 
   [Chuck Short]
