@@ -1,5 +1,6 @@
 cobbler (2.1.0~bzr1980-0ubuntu1) natty; urgency=low
 
+  [ Dave Walker (Daviey) ]
   [Chuck Short]
   * New upstram release.
 
@@ -8,7 +9,10 @@ cobbler (2.1.0~bzr1980-0ubuntu1) natty; urgency=low
     be functional separately. However, the additional dependency of libvirt-bin 
     has been added.  (LP: #707113)
 
- -- Dave Walker (Daviey) <DaveWalker@ubuntu.com>  Tue, 25 Jan 2011 13:51:41 +0000
+  [ Clint Byrum ]
+  * debian/patches/series: remove 02_install-layout.patch
+
+ -- Clint Byrum <clint@ubuntu.com>  Tue, 25 Jan 2011 16:46:04 -0800
 
 cobbler (2.1.0~bzr1881-0ubuntu1) natty; urgency=low
 
