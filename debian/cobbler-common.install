@@ -10,7 +10,6 @@ etc/cobbler/zone.template
 etc/cobbler/cheetah_macros
 etc/cobbler/cobbler_bash
 etc/cobbler/cobbler.conf
-etc/cobbler/cobblerd
 etc/cobbler/cobblerd_rotate
 etc/cobbler/cobbler_web.conf
 etc/cobbler/completions
