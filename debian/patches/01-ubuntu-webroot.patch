@@ -1,3 +1,6 @@
+Description: Detect the webroot to be used based on the distro.
+Author: Chuck Short <zulcss@ubuntu.com>
+Upstream: No
 diff -Naurp cobbler-2.1.0.orig//setup.py cobbler-2.1.0//setup.py
 --- cobbler-2.1.0.orig//setup.py	2011-01-28 10:23:01.000000000 -0500
 +++ cobbler-2.1.0//setup.py	2011-01-28 11:01:44.226003787 -0500
