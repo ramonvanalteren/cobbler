@@ -1,3 +1,9 @@
+cobbler (2.1.0~bzr1988-0ubunt2) UNRELEASED; urgency=low
+
+  * 
+
+ -- Chuck Short <zulcss@ubuntu.com>  Fri, 28 Jan 2011 14:39:12 -0500
+
 cobbler (2.1.0~bzr1988-0ubuntu1) natty; urgency=low
 
   [Chuck Short]
