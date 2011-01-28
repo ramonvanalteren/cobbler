@@ -3,7 +3,7 @@
 # Verbose mode
 # export DH_VERBOSE=1
 
-RELEASE_VERSION := 1881
+RELEASE_VERSION := 1988
 
 %:
 	dh $@ --with python2,javahelper
