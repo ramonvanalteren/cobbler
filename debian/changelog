@@ -6,8 +6,10 @@ cobbler (2.1.0~bzr1980-0ubuntu1) natty; urgency=low
   * Dropped 02_install-layout.patch
   * Added Debian/README.Source
   * Reworked webroot patch
-  * debian/cobbler-common.install: Dont put the init script
+  * debian/cobbler-common.install: Don't put the init script
     in /etc/cobbler. (LP: #705441)
+  * debian/patches/05_fix_init_paths.patch: Don't hard code init paths
+    (LP: #706995)
 
   [Dave Walker (Daviey)]
   * debian/control: For binary package koan, do not depend on cobbler as it should 
