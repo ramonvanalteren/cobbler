@@ -1,4 +1,4 @@
-cobbler (2.1.0~bzr1997-0ubunt2) UNRELEASED; urgency=low
+cobbler (2.1.0~bzr1998-0ubunt2) natty; urgency=low
 
   * New upstream release.
   * Dropped:
