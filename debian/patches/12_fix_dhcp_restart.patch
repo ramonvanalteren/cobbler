@@ -1,0 +1,12 @@
+diff -Naurp cobbler.orig//cobbler/modules/sync_post_restart_services.py cobbler//cobbler/modules/sync_post_restart_services.py
+--- cobbler.orig//cobbler/modules/sync_post_restart_services.py	2011-02-18 12:51:17.104961600 -0500
++++ cobbler//cobbler/modules/sync_post_restart_services.py	2011-02-18 13:07:24.101372464 -0500
+@@ -42,7 +42,7 @@ def run(api,args,logger):
+                 if rc != 0:
+                    logger.error("dhcpd -t failed")
+                    return 1
+-                rc = utils.subprocess_call(logger,"service dhcpd restart", shell=True)
++                rc = utils.subprocess_call(logger,"service isc-dhcp-server restart", shell=True)
+         elif which_dhcp_module == "manage_dnsmasq":
+             if restart_dhcp != "0":
+                 rc = utils.subprocess_call(logger, "service dnsmasq restart")

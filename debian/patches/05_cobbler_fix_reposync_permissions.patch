@@ -1,0 +1,12 @@
+diff -Naurp cobbler.orig//cobbler/action_reposync.py cobbler//cobbler/action_reposync.py
+--- cobbler.orig//cobbler/action_reposync.py	2011-02-18 12:51:17.080962483 -0500
++++ cobbler//cobbler/action_reposync.py	2011-02-18 13:05:56.868583994 -0500
+@@ -560,7 +560,7 @@ class RepoSync:
+         a safeguard.
+         """
+         # all_path = os.path.join(repo_path, "*")
+-        cmd1 = "chown -R root:apache %s" % repo_path
++        cmd1 = "chown -R root:www-data %s" % repo_path
+         utils.subprocess_call(self.logger, cmd1)
+ 
+         cmd2 = "chmod -R 755 %s" % repo_path

@@ -1,2 +1,4 @@
 21_cobbler_use_netboot.patch
 30_cobbler4j_redstone.patch
+12_fix_dhcp_restart.patch
+05_cobbler_fix_reposync_permissions.patch
