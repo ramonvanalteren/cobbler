@@ -1,6 +1,12 @@
 cobbler (2.1.0~bzr1988-0ubunt2) UNRELEASED; urgency=low
 
   * New upstream release.
+  * Dropped:
+    - debian/patches/01-ubuntu-webroot.patch: Accepted upstream.
+    - debian/patches/04-logfile-check.patch: Accepted upstream.
+    - debian/patches/05_fix_init_paths.patch: Accepted upstream.
+    - debian/patches/11_support-other-wol-tools.patch: Accepted upstream.
+    - debian/patches/22_re-enable_debmirror.patch: Accepted upstream.
 
  -- Chuck Short <zulcss@ubuntu.com>  Fri, 28 Jan 2011 14:39:12 -0500
 
