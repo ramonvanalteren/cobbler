@@ -44,4 +44,4 @@ get-orig-source:
 	mkdir -p $(CURDIR)/dist/cobbler-2.1.0/cobbler4j
 	cp -rp $(CURDIR)/cobbler4j/* $(CURDIR)/dist/cobbler-2.1.0/cobbler4j
 	mv $(CURDIR)/dist/cobbler-2.1.0 $(CURDIR)/dist/cobbler-2.1.0~bzr$(RELEASE_VERSION)
-	cd $(CURDIR)/dist ; tar zcvf ../../cobbler-2.1.0~bzr$(RELEASE_VERSION).tar.gz cobbler-2.1.0~bzr$(RELEASE_VERSION)
+	cd $(CURDIR)/dist ; tar zcvf ../../cobbler-2.1.0~bzr$(RELEASE_VERSION).orig.tar.gz cobbler-2.1.0~bzr$(RELEASE_VERSION)
