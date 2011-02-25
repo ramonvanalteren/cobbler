@@ -1,10 +1,10 @@
-cobbler (2.1.0~bzr1998-0ubunt2ubuntu1) natty; urgency=low
+cobbler (2.1.0~bzr2002-0ubuntu1) natty; urgency=low
 
   * New upstream release. 
 
  -- Chuck Short <zulcss@ubuntu.com>  Fri, 25 Feb 2011 14:47:03 -0500
 
-cobbler (2.1.0~bzr1998-0ubunt2) natty; urgency=low
+cobbler (2.1.0~bzr1998-0ubuntu1) natty; urgency=low
 
   * New upstream release.
   * Dropped:
