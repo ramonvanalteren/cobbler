@@ -1,7 +1,7 @@
-cobbler (2.1.0~bzr2002-0ubuntu1) natty; urgency=low
+cobbler (2.1.0~bzr2005-0ubuntu1) natty; urgency=low
 
   [Chuck Short]
-  * New upstream release 
+  * New upstream release. 
 
   [Andres Rodriguez]
   * Add python-koan package (LP: #731616):
