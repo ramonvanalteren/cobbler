@@ -1,5 +1,18 @@
 cobbler (2.1.0~bzr2002-0ubuntu1) natty; urgency=low
 
+  [Chuck Short]
+  * New upstream release 
+
+  [Andres Rodriguez]
+  * Add python-koan package (LP: #731616):
+    - debian/control: Add python-koan binary package; fix typo
+    - debian/python-cobbler.install: Do not install koan python modules.
+    - debian/python-koan.install: Add. Install koan python modules.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Fri, 11 Mar 2011 07:59:55 -0500
+
+cobbler (2.1.0~bzr2002-0ubuntu1) natty; urgency=low
+
   * New upstream release. 
 
  -- Chuck Short <zulcss@ubuntu.com>  Fri, 25 Feb 2011 14:47:03 -0500

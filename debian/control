@@ -62,7 +62,7 @@ Depends: ${python:Depends},
  python-django, 
  ${misc:Depends}
 Provides: ${python:Provides}
-Description: Install server - python libraires.
+Description: Install server - python libraries.
  Cobbler is a network install server. Cobbler supports PXE, virtualized
  installs, and reinstalling existing Linux machines. The last two modes use
  a helper tool, 'koan', that integrates with cobbler. Cobbler's advanced
@@ -108,7 +108,7 @@ Description: Cobbler Install server - common files
 
 Package: koan
 Architecture: all
-Depends: ${python:Depends}, ${misc:Depends}, libvirt-bin
+Depends: ${python:Depends}, ${misc:Depends}, python-koan, libvirt-bin
 Description: kickstart-over-a-network (koan)
  Koan stands for kickstart-over-a-network and allows for both network 
  installation of new virtualized guests and re-installation of an existing 
