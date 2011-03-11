@@ -1,6 +1,9 @@
-## Description: add some description
-## Origin/Author: add some origin or author
-## Bug: bug URL
+Description: Do not fail when yum python module is not present.
+ Since ubuntu does not use yum, this fixes the failure of importing
+ the yum python module and adding support to be able to use other
+ package managers in the future
+Author: Andres Rodriguez <andreserl@ubuntu.com>
+Bug: https://bugs.launchpad.net/ubuntu/+source/cobbler/+bug/731620
 Index: ubuntu/koan/configurator.py
 ===================================================================
 --- ubuntu.orig/koan/configurator.py	2011-03-11 16:03:32.531630478 -0500

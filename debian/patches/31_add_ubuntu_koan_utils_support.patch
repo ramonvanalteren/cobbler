@@ -1,6 +1,6 @@
-## Description: add some description
-## Origin/Author: add some origin or author
-## Bug: bug URL
+Description: Add support for Ubuntu distro
+ Taken from cobbler utils.py
+Author: Andres Rodriguez <andreserl@ubuntu.com>
 Index: ubuntu/koan/utils.py
 ===================================================================
 --- ubuntu.orig/koan/utils.py	2011-03-11 16:02:47.221564016 -0500
