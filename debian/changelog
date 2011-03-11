@@ -1,3 +1,10 @@
+cobbler (2.1.0~bzr2005-0ubuntu2) natty; urgency=low
+
+  * debian/patches/31_add_ubuntu_koan_utils_support.patch: Add support for ubuntu
+    distro in koan utils.py.
+
+ -- Andres Rodriguez <andreserl@ubuntu.com>  Fri, 11 Mar 2011 16:02:48 -0500
+
 cobbler (2.1.0~bzr2005-0ubuntu1) natty; urgency=low
 
   [Chuck Short]

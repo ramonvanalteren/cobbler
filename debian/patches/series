@@ -2,3 +2,4 @@
 30_cobbler4j_redstone.patch
 12_fix_dhcp_restart.patch
 05_cobbler_fix_reposync_permissions.patch
+31_add_ubuntu_koan_utils_support.patch
