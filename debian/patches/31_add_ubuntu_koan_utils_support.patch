@@ -1,0 +1,35 @@
+Description: Add support for Ubuntu distro
+ Taken from cobbler utils.py
+Author: Andres Rodriguez <andreserl@ubuntu.com>
+Index: ubuntu/koan/utils.py
+===================================================================
+--- ubuntu.orig/koan/utils.py	2011-03-11 16:02:47.221564016 -0500
++++ ubuntu/koan/utils.py	2011-03-11 16:02:42.831557582 -0500
+@@ -315,7 +315,8 @@
+     Determines what distro we're running under.  
+     """
+     if os.path.exists("/etc/debian_version"):
+-       return "debian"
++       import lsb_release
++       return lsb_release.get_distro_information()['ID'].lower()
+     elif os.path.exists("/etc/SuSE-release"):
+        return "suse"
+     else:
+@@ -351,11 +352,12 @@
+       raise CX("failed to detect local OS version from /etc/redhat-release")
+ 
+    elif check_dist() == "debian":
+-      fd = open("/etc/debian_version")
+-      parts = fd.read().split(".")
+-      version = parts[0]
+-      rest = parts[1]
+-      make = "debian"
++      import lsb_release
++      release = lsb_release.get_distro_information()['RELEASE']
++      return ("debian", release)
++   elif check_dist() == "ubuntu":
++      version = sub_process.check_output(("lsb_release","--release","--short")).rstrip()
++      make = "ubuntu"
+       return (make, float(version))
+    elif check_dist() == "suse":
+       fd = open("/etc/SuSE-release")
